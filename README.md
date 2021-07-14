@@ -1,2 +1,1 @@
-# sahmed17.github.org
-Sayf's site
+# Sayf's site
