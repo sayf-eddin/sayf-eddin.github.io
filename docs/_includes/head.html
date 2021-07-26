@@ -1,0 +1,27 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+    <title>{{ site.name }}</title>
+  
+    <meta name="viewport"    content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description }}">
+  
+    <!-- Open Graph -->
+    <meta property="og:site_name"   content="{{ site.name }}" />
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="{{ site.baseurl | prepend: site.url }}" />
+    <meta property="og:title"       content="{{ site.title }}" />
+    <meta property="og:description" content="{{ site.description }}" />
+    {% if site.images.seo %}<meta property="og:image" content="{{ site.images.seo }}" />{% endif %}
+  
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ '/css/' | prepend: site.baseurl | prepend: site.url }}site.css" />
+  
+    <!-- Favicon -->
+    <link rel="canonical"     href="{{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="shortcut icon" href="{{ site.images.favicon }}" type="image/png">
+    <link rel="icon"          href="{{ site.images.favicon }}" type="image/png">
+</head>
