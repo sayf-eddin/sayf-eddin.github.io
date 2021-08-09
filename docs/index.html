@@ -5,7 +5,14 @@ layout: default
 {% include hero.html %}
 
 <section class="about" id="about">
-    
+    <div class="text-center">
+        <h3>~ About Me ~</h3>
+    </div>
+    <div class="container">
+        {% for item in site.about %}
+        {{ item.text | markdownify }}
+        {% endfor %}
+    </div>
 </section>
 
 <section class="featured" id="featured">

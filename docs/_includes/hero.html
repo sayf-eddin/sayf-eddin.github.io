@@ -2,13 +2,14 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <ul class="nav navbar-nav mx-auto">
             <li class="nav-item">
-                <p class="nav-link" onclick="window.alert('hi')">Features</p>
+                <p class="nav-link" onclick="document.getElementById('about').scrollIntoView();">About Me</p>
             </li>
         </ul>
     </nav>
 
-    <div class="hero-content container">
+    <div class="hero-content text-center">
+        <img src="{{ site.images.hero }}" alt="A picture of me" class="rounded">
         <h1>Sayf Eddin Ahmed</h1>
-        <img src="{{ site.images.hero }}" alt="Hero">
+        <h2>Software Developer</h2>
     </div>
 </section>

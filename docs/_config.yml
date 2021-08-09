@@ -14,6 +14,15 @@ images:
   hero: "/images/profile.jpg"
   seo: "/images/seo.jpg"
 
+about:
+  - text: >
+      My personal mission is to give to society through my passion for innovation and technology. 
+      I often get obsessed with accomplishing tasks — the more difficult the better. The time I 
+      have spent heavily working on projects alone does not mean I closely collaborate with 
+      stakeholders any less.
+  - text: >
+      I am always eager to learn.
+
 
 # Build settings
 theme: minima
