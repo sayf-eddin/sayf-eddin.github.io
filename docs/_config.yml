@@ -25,6 +25,12 @@ about:
       I love exercising my creativity by playing music with my guitar or painting, especially with 
       friends. I also enjoy being active through outdoor activities from hiking to soccer.
 
+featured:
+  - image: "/images/bus_api.png"
+    title: "Centro Bus Schedule API"
+    text: >
+      REST API built in Django
+
 
 # Build settings
 theme: minima

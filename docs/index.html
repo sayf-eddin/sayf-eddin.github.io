@@ -16,14 +16,23 @@ layout: default
 </section>
 
 <section class="featured" id="featured">
-    
+    <div class="text-center">
+        <h3>~ Featured Work ~</h3>
+    </div>
+    <div class="container">
+        {% for item in site.featured %}
+        <div class="project">
+            <div class="text-center">
+                <h4>{{item.title}}</h4>
+                <img src="{{ item.image }}" alt="{{item.title}}">
+            </div>
+            {{ item.text | markdownify }}
+        </div>
+        {% endfor %}
+    </div>
 </section>
 
 <section class="work" id="work">
-    
-</section>
-
-<section class="timeline" id="timeline">
     
 </section>
 

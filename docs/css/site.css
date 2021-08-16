@@ -16,6 +16,11 @@ h2 {
 
 h3 {
     font-size: 2vw;
+    padding-bottom: 2vw;
+}
+
+h4 {
+    font-size: 1.75vw;
     padding-bottom: 1vw;
 }
 
@@ -26,6 +31,8 @@ p {
 .nav-item p {
     color: white !important;
     margin-bottom: 0;
+    padding-left: 5vw !important;
+    padding-right: 5vw !important;
 }
 
 .nav-item p:hover,
@@ -56,4 +63,27 @@ p {
 
 .about {
     padding-top: 6vw;
+    padding-bottom: 3vw;
+}
+
+.about p {
+    padding-bottom: 2vw;
+}
+
+.featured {
+    padding-top: 6vw;
+    padding-bottom: 3vw;
+}
+
+.featured .container {
+    max-width: 70vw;
+}
+
+.featured img {
+    width: 45vw;
+    padding-bottom: 2vw;
+}
+
+.project {
+    padding-bottom: 5vw;
 }
