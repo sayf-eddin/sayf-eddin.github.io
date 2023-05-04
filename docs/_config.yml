@@ -5,14 +5,15 @@
 title: Sayf Eddin Ahmed
 email: sayf.eddin.ahmed@gmail.com
 description: >-
-  Pursuing my goals to give to society through my passion for innovation and technology.
+  Pursuing my goals to give to society through technology.
 baseurl: ""
 url: "https://sayf-eddin.me/"
 
+# Compressed with TinyPNG
 images:
   favicon: "/images/favicon.png"
   hero: "/images/profile.jpg"
-  seo: "/images/seo.jpg"
+  seo: "/images/seo.png"
 
 about:
   - text: >
