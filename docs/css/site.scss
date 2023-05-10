@@ -1,0 +1,111 @@
+---
+---
+
+body {
+    background-color: white;
+}
+
+$font_color: black;
+$blue: #050050;
+$light_blue: #ebeaf6;
+
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: $font_color;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.7rem;
+    padding-bottom: 1.7rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.nav-item p {
+    color: white !important;
+    margin-bottom: 0;
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+}
+
+.nav-item p:hover,
+.nav-item p:focus {
+    cursor: pointer;
+    color: #9b96ca !important;
+    transition: all 0.2s ease;
+}
+
+.hero {
+    background-image: linear-gradient($blue, #ffffff);
+    padding-bottom: 3rem;
+}
+
+.hero-content {
+    padding-top: 7rem;
+}
+
+.hero img {
+    margin: 1.5rem auto;
+    width: 25rem;
+    opacity: 0.9;
+    border: 0.5rem solid rgb(0, 0, 0);
+}
+
+.container {
+    max-width: 55rem;
+}
+
+@mixin section($bg: white)
+{
+    background-color: $bg;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+}
+
+.about {
+    @include section;
+}
+
+.about p {
+    padding-bottom: 1.2rem;
+}
+
+.featured {
+    @include section($bg: $light_blue);
+}
+
+.featured .container {
+    max-width: 50rem;
+}
+
+.project img {
+    width: 30rem;
+    padding-bottom: 1.2rem;
+}
+
+.project {
+    padding-bottom: 2rem;
+}
+
+.work {
+    @include section;
+}
+
+.education {
+    @include section($bg: $light_blue);
+}
