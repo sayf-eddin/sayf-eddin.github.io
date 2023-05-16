@@ -6,9 +6,12 @@
     {{ content }}
 
     <section class="footer" id="footer">
-      
+      <div class="container">
+        {{ site.footer | markdownify }}
+      </div>
     </section>
 
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="{{ '/js/site.js' | prepend: site.baseurl | prepend: site.url }}"></script>
   </body>
 </html>

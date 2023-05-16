@@ -6,12 +6,28 @@ body {
 }
 
 $font_color: black;
-$blue: #050050;
+$dark_blue: #050050;
+$blue: #9b96ca;
 $light_blue: #ebeaf6;
 
 * {
     font-family: 'Source Sans Pro', sans-serif;
     color: $font_color;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    border: 0.2rem solid $blue;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 1.2rem;
+
+    &:hover{
+        color: $dark_blue;
+        background-color: $blue;
+        transition: 0.4s;
+    }
 }
 
 h1 {
@@ -29,11 +45,21 @@ h3 {
 
 h4 {
     font-size: 1.5rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+h5 {
+    font-size: 1.4rem;
+    margin-bottom: 0.2rem;
 }
 
 p {
     font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.bg-dark {
+    background-color: $dark_blue !important;
 }
 
 .nav-item p {
@@ -46,13 +72,14 @@ p {
 .nav-item p:hover,
 .nav-item p:focus {
     cursor: pointer;
-    color: #9b96ca !important;
+    color: $blue !important;
     transition: all 0.2s ease;
 }
 
 .hero {
-    background-image: linear-gradient($blue, #ffffff);
+    background-image: linear-gradient($dark_blue, white);
     padding-bottom: 3rem;
+    border-bottom: 0.2rem solid $light_blue;
 }
 
 .hero-content {
@@ -73,7 +100,7 @@ p {
 @mixin section($bg: white)
 {
     background-color: $bg;
-    padding-top: 4rem;
+    padding-top: 3.5rem;
     padding-bottom: 3rem;
 }
 
@@ -82,7 +109,7 @@ p {
 }
 
 .about p {
-    padding-bottom: 1.2rem;
+    padding-bottom: 1.5rem;
 }
 
 .featured {
@@ -93,12 +120,52 @@ p {
     max-width: 50rem;
 }
 
+.carousel {
+    width: 100%;
+
+    .flickity-button {
+        background: transparent;
+    }
+
+    .flickity-prev-next-button {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .flickity-prev-next-button.previous {
+        left: -1.8rem;
+    }
+
+    .flickity-prev-next-button.next {
+        right: -1.8rem;
+    }
+
+    .flickity-button-icon {
+        fill: black;
+    }
+
+    .flickity-page-dots {
+        bottom: -1.2rem;
+    }
+
+    
+    .flickity-page-dots .dot.is-selected {
+        background: black;
+    }
+}
+
+.carousel-cell {
+    width: 100%;
+}
+
+
 .project img {
-    width: 30rem;
-    padding-bottom: 1.2rem;
+    max-width: 100%;
+    // padding-bottom: 1.2rem;
 }
 
 .project {
+    padding-top: 1rem;
     padding-bottom: 2rem;
 }
 
@@ -106,6 +173,22 @@ p {
     @include section;
 }
 
+.job {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
 .education {
     @include section($bg: $light_blue);
+    text-align: center;
+}
+
+.education img {
+    max-width: 15rem;
+    padding-bottom: 1rem;
+}
+
+.footer {
+    @include section;
+    text-align: center;
 }
