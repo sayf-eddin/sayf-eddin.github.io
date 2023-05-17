@@ -5,63 +5,63 @@ layout: default
 {% include hero.html %}
 
 <section class="about" id="about">
-    <div class="text-center">
-        <h3>~ About Me ~</h3>
-    </div>
-    <div class="container">
-        {% for text in site.about %}
-        {{ text | markdownify }}
-        {% endfor %}
-    </div>
+  <div class="text-center">
+    <h3>~ About Me ~</h3>
+  </div>
+  <div class="container">
+    {% for text in site.about %}
+    {{ text | markdownify }}
+    {% endfor %}
+  </div>
 </section>
 
 <section class="featured" id="featured">
-    <div class="text-center">
-        <h3>~ Featured Work ~</h3>
-    </div>
-    <div class="container">
-        {% for project in site.featured %}
-        <div class="project row align-items-center justify-content-around">
-            <div class="col">
-                <h4>{{ project.title }}</h4>
-                {{ project.text | markdownify }}
-            </div>
-            <div class="col">
-                <div class="carousel">
-                    {% for image in project.images %}
-                    <div class="carousel-cell">
-                        <img src="{{ image }}" alt="{{project.title}}">
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
+  <div class="text-center">
+    <h3>~ Featured Work ~</h3>
+  </div>
+  <div class="container">
+    {% for project in site.featured %}
+    <div class="project row align-items-center justify-content-around">
+      <div class="col">
+        <h4>{{ project.title }}</h4>
+        {{ project.text | markdownify }}
+      </div>
+      <div class="col">
+        <div class="carousel">
+          {% for image in project.images %}
+          <div class="carousel-cell">
+            <img src="{{ image }}" alt="{{project.title}}">
+          </div>
+          {% endfor %}
         </div>
-        {% endfor %}
+      </div>
     </div>
+    {% endfor %}
+  </div>
 </section>
 
 <section class="work" id="work">
-    <div class="text-center">
-        <h3>~ Work History ~</h3>
+  <div class="text-center">
+    <h3>~ Work History ~</h3>
+  </div>
+  <div class="container">
+    {% for job in site.work %}
+    <div class="job">
+      <h4>{{ job.company }}</h4>
+      <h5>{{ job.role }}</h5>
+      <p>{{ job.years }}</p>
+      {{ job.description | markdownify }}
     </div>
-    <div class="container">
-        {% for job in site.work %}
-        <div class="job">
-            <h4>{{ job.company }}</h4>
-            <h5>{{ job.role }}</h5>
-            <p>{{ job.years }}</p>
-            {{ job.description | markdownify }}
-        </div>
-        {% endfor %}
-    </div>
+    {% endfor %}
+  </div>
 </section>
 
 <section class="education" id="education">
-    <div class="text-center">
-        <h3>~ Education ~</h3>
-    </div>
-    <div class="container">
-        <img src="{{ site.images.education }}" alt="Syracuse University">
-        {{ site.education | markdownify }}
-    </div>
+  <div class="text-center">
+    <h3>~ Education ~</h3>
+  </div>
+  <div class="container">
+    <img src="{{ site.images.education }}" alt="Syracuse University">
+    {{ site.education | markdownify }}
+  </div>
 </section>

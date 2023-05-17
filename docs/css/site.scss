@@ -1,8 +1,8 @@
----
----
+--- 
+--- 
 
 body {
-    background-color: white;
+  background-color: white;
 }
 
 $font_color: black;
@@ -11,184 +11,183 @@ $blue: #9b96ca;
 $light_blue: #ebeaf6;
 
 * {
-    font-family: 'Source Sans Pro', sans-serif;
-    color: $font_color;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: $font_color;
 }
 
 a {
-    color: black;
-    text-decoration: none;
-    border: 0.2rem solid $blue;
-    border-radius: 0.4rem;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem 1.2rem;
+  color: black;
+  text-decoration: none;
+  border: 0.2rem solid $blue;
+  border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 1.2rem;
 
-    &:hover{
-        color: $dark_blue;
-        background-color: $blue;
-        transition: 0.4s;
-    }
+  &:hover {
+    color: $dark_blue;
+    background-color: $blue;
+    transition: 0.4s;
+  }
 }
 
 h1 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 h2 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 h3 {
-    font-size: 1.7rem;
-    padding-bottom: 1.7rem;
+  font-size: 1.7rem;
+  padding-bottom: 1.7rem;
 }
 
 h4 {
-    font-size: 1.5rem;
-    padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
 }
 
 h5 {
-    font-size: 1.4rem;
-    margin-bottom: 0.2rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
 }
 
 p {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .bg-dark {
-    background-color: $dark_blue !important;
+  background-color: $dark_blue !important;
 }
 
 .nav-item p {
-    color: white !important;
-    margin-bottom: 0;
-    padding-left: 4rem !important;
-    padding-right: 4rem !important;
+  color: white !important;
+  margin-bottom: 0;
+  padding-left: 4rem !important;
+  padding-right: 4rem !important;
 }
 
 .nav-item p:hover,
 .nav-item p:focus {
-    cursor: pointer;
-    color: $blue !important;
-    transition: all 0.2s ease;
+  cursor: pointer;
+  color: $blue !important;
+  transition: all 0.2s ease;
 }
 
 .hero {
-    background-image: linear-gradient($dark_blue, white);
-    padding-bottom: 3rem;
-    border-bottom: 0.2rem solid $light_blue;
+  background-image: linear-gradient($dark_blue, white);
+  padding-bottom: 3rem;
+  border-bottom: 0.2rem solid $light_blue;
 }
 
 .hero-content {
-    padding-top: 7rem;
+  padding-top: 7rem;
 }
 
 .hero img {
-    margin: 1.5rem auto;
-    width: 25rem;
-    opacity: 0.9;
-    border: 0.5rem solid rgb(0, 0, 0);
+  margin: 1.5rem auto;
+  width: 25rem;
+  opacity: 0.9;
+  border: 0.5rem solid rgb(0, 0, 0);
 }
 
 .container {
-    max-width: 55rem;
+  max-width: 55rem;
 }
 
-@mixin section($bg: white)
-{
-    background-color: $bg;
-    padding-top: 3.5rem;
-    padding-bottom: 3rem;
+@mixin section($bg: white) {
+  background-color: $bg;
+  padding-top: 3.5rem;
+  padding-bottom: 3rem;
 }
 
 .about {
-    @include section;
+  @include section;
 }
 
 .about p {
-    padding-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .featured {
-    @include section($bg: $light_blue);
+  @include section($bg: $light_blue);
 }
 
 .featured .container {
-    max-width: 50rem;
+  max-width: 50rem;
 }
 
 .carousel {
-    width: 100%;
+  width: 100%;
 
-    .flickity-button {
-        background: transparent;
-    }
+  .flickity-button {
+    background: transparent;
+  }
 
-    .flickity-prev-next-button {
-        width: 2rem;
-        height: 2rem;
-    }
+  .flickity-prev-next-button {
+    width: 2rem;
+    height: 2rem;
+  }
 
-    .flickity-prev-next-button.previous {
-        left: -1.8rem;
-    }
+  .flickity-prev-next-button.previous {
+    left: -1.8rem;
+  }
 
-    .flickity-prev-next-button.next {
-        right: -1.8rem;
-    }
+  .flickity-prev-next-button.next {
+    right: -1.8rem;
+  }
 
-    .flickity-button-icon {
-        fill: black;
-    }
+  .flickity-button-icon {
+    fill: black;
+  }
 
-    .flickity-page-dots {
-        bottom: -1.2rem;
-    }
+  .flickity-page-dots {
+    bottom: -1.2rem;
+  }
 
-    
-    .flickity-page-dots .dot.is-selected {
-        background: black;
-    }
+
+  .flickity-page-dots .dot.is-selected {
+    background: black;
+  }
 }
 
 .carousel-cell {
-    width: 100%;
+  width: 100%;
 }
 
 
 .project img {
-    max-width: 100%;
-    // padding-bottom: 1.2rem;
+  max-width: 100%;
+  // padding-bottom: 1.2rem;
 }
 
 .project {
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
 .work {
-    @include section;
+  @include section;
 }
 
 .job {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .education {
-    @include section($bg: $light_blue);
-    text-align: center;
+  @include section($bg: $light_blue);
+  text-align: center;
 }
 
 .education img {
-    max-width: 15rem;
-    padding-bottom: 1rem;
+  max-width: 15rem;
+  padding-bottom: 1rem;
 }
 
 .footer {
-    @include section;
-    text-align: center;
+  @include section;
+  text-align: center;
 }
