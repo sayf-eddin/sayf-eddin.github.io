@@ -14,7 +14,6 @@ images:
   hero: "/images/profile.jpg"
   seo: "/images/seo.png"
   education: "/images/syracuse.png"
-  # footer: "/images/psyduck.png"
 
 about:
   - >
@@ -22,10 +21,10 @@ about:
       I am always eager to learn, and I often get obsessed with accomplishing tasks — the more 
       difficult the better. The time I spend heavily working on projects alone does not mean 
       I spend any less closely collaborating. I am constantly looking for ways to
-      improve myself and help those around me.
+      improve myself and help those&nbsp;around&nbsp;me.
   - >
       I love exercising my creativity by playing guitar or painting, especially with 
-      friends. I also enjoy going outside to play soccer or for a long hike.
+      friends. I also enjoy going outside to play soccer or for a&nbsp;long&nbsp;hike.
 
 featured:
   - title: "Centro Bus Schedule API"
@@ -37,30 +36,34 @@ featured:
 
 work:
   - company: "Hogarth Worldwide"
-    role: "Web Developer"
+    role: "Front-End Developer"
     years: "2021-2022"
     description: >
       WSJ
 
   - company: "Syracuse University Division of Marketing and Communications"
-    role: "Digital Team Intern"
+    role: "Full-Stack Developer Intern"
     years: "2020-2021"
     description: >
       syr
 
   - company: "Syracuse University School of Information Studies"
-    role: "Junior Developer"
+    role: "Junior Django Developer"
     years: "2019-2020"
     description: >
       syr
 
 education: >
-  <b>Bachelor of Science in Computer Science</b><br>
-  Minor in Cognitive Science<br>
+  <b>Bachelor of Science in Computer&nbsp;Science</b><br>
+  Minor in Cognitive&nbsp;Science<br>
   May 2021<br>
 
-footer: >
-  [GitHub](https://github.com/sayf-eddin){:target="_blank"} [LinkedIn](https://www.linkedin.com/in/sayf-ahmed/){:target="_blank"}
+footer:
+  - name: "GitHub"
+    link: "https://github.com/sayf-eddin"
+
+  - name: "LinkedIn"
+    link: "https://www.linkedin.com/in/sayf-ahmed/"
 
 # Build settings
 theme: minima

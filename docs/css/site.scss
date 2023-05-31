@@ -18,24 +18,52 @@ $light_blue: #ebeaf6;
 a {
   color: black;
   text-decoration: none;
-  border: 0.2rem solid $blue;
-  border-radius: 0.4rem;
-  padding: 0.5rem 1rem;
-  margin: 0.5rem 1.2rem;
+  font-size: 1.2rem;
 
   &:hover {
     color: $dark_blue;
+    transition: 0.4s;
+  }
+}
+
+.button {
+  border: 0.2rem solid $blue;
+  border-radius: 0.4rem;
+  padding: 0.6rem;
+  margin: 0.5rem 1.2rem;
+
+  &:hover {
     background-color: $blue;
     transition: 0.4s;
   }
 }
 
+.mobile {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+}
+
 h1 {
   font-size: 2.5rem;
+
+  @media (max-width: 400px) {
+    font-size: 2.1rem;
+  }
 }
 
 h2 {
-  font-size: 2rem;
+  @media (max-width: 400px) {
+    font-size: 1.7rem;
+  }
 }
 
 h3 {
@@ -62,11 +90,29 @@ p {
   background-color: $dark_blue !important;
 }
 
+.container {
+  max-width: 55rem;
+
+  @media (max-width: 910px) {
+    max-width: 80%;
+  }    
+}
+
 .nav-item p {
   color: white !important;
   margin-bottom: 0;
   padding-left: 4rem !important;
   padding-right: 4rem !important;
+
+  @media (max-width: 910px) {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  } 
+  
+  @media (max-width: 576px) {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 
 .nav-item p:hover,
@@ -74,6 +120,10 @@ p {
   cursor: pointer;
   color: $blue !important;
   transition: all 0.2s ease;
+}
+
+.navbar-toggler {
+  margin-left: 1rem !important;
 }
 
 .hero {
@@ -84,6 +134,10 @@ p {
 
 .hero-content {
   padding-top: 7rem;
+
+  @media (max-width: 576px) {
+    padding-top: 5rem;
+  }
 }
 
 .hero img {
@@ -91,10 +145,14 @@ p {
   width: 25rem;
   opacity: 0.9;
   border: 0.5rem solid rgb(0, 0, 0);
-}
 
-.container {
-  max-width: 55rem;
+  @media (max-width: 576px) {
+    width: 20rem;
+  }
+
+  @media (max-width: 400px) {
+    width: 15rem;
+  }
 }
 
 @mixin section($bg: white) {
@@ -117,6 +175,25 @@ p {
 
 .featured .container {
   max-width: 50rem;
+
+  @media (max-width: 910px) {
+    max-width: 85%;
+  }   
+}
+
+.featured .col {
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 800px) {
+  .featured .row {
+    display: block;
+  }
+
+  .featured .col {
+    text-align: center;
+    margin: 0 auto;
+  }
 }
 
 .carousel {
@@ -165,7 +242,7 @@ p {
 
 .project {
   padding-top: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .work {
@@ -190,4 +267,25 @@ p {
 .footer {
   @include section;
   text-align: center;
+  padding-bottom: 1rem !important;
+}
+
+.footer .col {
+  flex: 0 0 auto;
+  width: 8rem; 
+}
+
+.footer_img {
+  max-width: 3rem;
+  padding-top: 5rem;
+  margin: 4rem auto 0.5rem;
+  background-image: url("/images/link.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &:hover {
+    background-image: url("/images/link_psy.png");
+    margin-top: 1rem;
+    padding-top: 9rem;
+  }
 }
