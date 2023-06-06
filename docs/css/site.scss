@@ -16,9 +16,23 @@ $light_blue: #ebeaf6;
 }
 
 a {
-  color: black;
+  color: $font_color;
   text-decoration: none;
   font-size: 1.2rem;
+  font-weight: 600;
+
+  &:hover {
+    color: $dark_blue;
+    transition: 0.4s;
+    text-decoration: underline;
+  }
+}
+
+.footer a {
+  color: $font_color;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
 
   &:hover {
     color: $dark_blue;
@@ -72,13 +86,13 @@ h3 {
 }
 
 h4 {
-  font-size: 1.5rem;
-  padding-bottom: 0.5rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
 }
 
 h5 {
-  font-size: 1.4rem;
-  margin-bottom: 0.2rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
 }
 
 p {
@@ -91,7 +105,7 @@ p {
 }
 
 .container {
-  max-width: 55rem;
+  max-width: 57rem;
 
   @media (max-width: 910px) {
     max-width: 80%;

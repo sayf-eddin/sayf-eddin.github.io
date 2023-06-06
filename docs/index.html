@@ -30,7 +30,9 @@ layout: default
         <div class="carousel">
           {% for image in project.images %}
           <div class="carousel-cell">
-            <img src="{{ image }}" alt="{{project.title}}">
+            <a href="{{ image }}" target="_blank">
+              <img src="{{ image }}" alt="{{project.title}}">
+            </a>
           </div>
           {% endfor %}
         </div>
@@ -48,8 +50,8 @@ layout: default
     {% for job in site.work %}
     <div class="job">
       <h4>{{ job.company }}</h4>
-      <h5>{{ job.role }}</h5>
-      <p>{{ job.years }}</p>
+      <h4>{{ job.role }}</h4>
+      <h5>{{ job.years }}</h5>
       {{ job.description | markdownify }}
     </div>
     {% endfor %}
@@ -61,7 +63,9 @@ layout: default
     <h3>~ Education ~</h3>
   </div>
   <div class="container">
-    <img src="{{ site.images.education }}" alt="Syracuse University">
+    <a href="https://www.syracuse.edu/" target="_blank">
+      <img src="{{ site.images.education }}" alt="Syracuse University">
+    </a>
     {{ site.education | markdownify }}
   </div>
 </section>

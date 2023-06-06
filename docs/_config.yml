@@ -32,7 +32,8 @@ featured:
       - "/images/bus_api.png"
       - "/images/bus_api.png"
     text: >
-      REST API built in Django
+      REST API built in Django for Syracuse University's Centro bus&nbsp;schedules<br>
+      • Features
 
 work:
   - company: "Hogarth Worldwide"
@@ -41,7 +42,8 @@ work:
     description: >
       • Worked as a web developer on Dow Jones products including The Wall Street Journal, MarketWatch, and Barron’s<br>
       • Collaborated with copywriters, designers, and marketing managers on nearly 300 various campaigns with multiple assets<br>
-      • Built eye-catching emails, developed customer-facing shop pages with JavaScript and Webpack, co-managed wsjpro.com through WordPress, and created an entire web platform for WSJ Journal House on Splash’s event content management system (CMS)
+      • Built eye-catching emails, developed customer-facing shop pages with JavaScript and Webpack, co-managed 
+      [wsjpro.com](https://www.wsjpro.com) through WordPress, and created an entire web platform for WSJ Journal House on Splash’s event content management system (CMS)
 
 
   - company: "Syracuse University Division of Marketing and Communications"
@@ -50,7 +52,8 @@ work:
     description: >
       • Built and managed pythonic applications and services for Syracuse University’s 15,000 WordPress sites<br>
       • Collaborated with six developers and an intern on full-stack development, systems administration, and data analysis<br>
-      • Developed applications using Django, pandas, Django REST framework, Ansible Tower API, Docker, Go, Fastly, and Wagtail
+      • Developed applications using Django, pandas, Django REST framework, Ansible Tower API, Docker, Go, Fastly, and Wagtail<br>
+      • [Read more](https://www.syracuse.edu/stories/student-interns-marketing/#s:sayf-ahmed-web-development-and-teamwork)
 
 
   - company: "Syracuse University School of Information Studies"
