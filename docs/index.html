@@ -22,11 +22,18 @@ layout: default
   <div class="container">
     {% for project in site.featured %}
     <div class="project row align-items-center justify-content-around">
-      <div class="col">
+      {% assign align = forloop.index | modulo:2 %}
+      {% if align == 1 %}
+      <div class="col-6 no-tablet">
         <h4>{{ project.title }}</h4>
         {{ project.text | markdownify }}
       </div>
-      <div class="col">
+      {% endif %}
+      <div class="col tablet">
+        <h4>{{ project.title }}</h4>
+        {{ project.text | markdownify }}
+      </div>
+      <div class="col carousel-col">
         <div class="carousel">
           {% for image in project.images %}
           <div class="carousel-cell">
@@ -37,6 +44,12 @@ layout: default
           {% endfor %}
         </div>
       </div>
+      {% if align == 0 %}
+      <div class="col-6 no-tablet">
+        <h4>{{ project.title }}</h4>
+        {{ project.text | markdownify }}
+      </div>
+      {% endif %}
     </div>
     {% endfor %}
   </div>

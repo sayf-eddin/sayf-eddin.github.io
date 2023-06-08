@@ -3,6 +3,7 @@
 
 body {
   background-color: white;
+  font-size: 1.2rem;
 }
 
 $font_color: black;
@@ -52,7 +53,7 @@ a {
   }
 }
 
-.mobile {
+.mobile, .tablet {
   display: none;
 }
 
@@ -62,6 +63,16 @@ a {
   }
 
   .mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 850px) {
+  .no-tablet {
+    display: none;
+  }
+
+  .tablet {
     display: block;
   }
 }
@@ -100,14 +111,21 @@ p {
   margin-bottom: 0.5rem;
 }
 
+ul {
+  padding-left: 1.2rem;
+}
+
 .bg-dark {
   background-color: $dark_blue !important;
 }
 
 .container {
-  max-width: 57rem;
+  max-width: 52rem;
 
-  @media (max-width: 910px) {
+  @media (max-width: 1000px) {
+    max-width: 48rem;
+  } 
+  @media (max-width: 850px) {
     max-width: 80%;
   }    
 }
@@ -118,7 +136,7 @@ p {
   padding-left: 4rem !important;
   padding-right: 4rem !important;
 
-  @media (max-width: 910px) {
+  @media (max-width: 930px) {
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
   } 
@@ -138,6 +156,8 @@ p {
 
 .navbar-toggler {
   margin-left: 1rem !important;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .hero {
@@ -156,7 +176,7 @@ p {
 
 .hero img {
   margin: 1.5rem auto;
-  width: 25rem;
+  width: 26rem;
   opacity: 0.9;
   border: 0.5rem solid rgb(0, 0, 0);
 
@@ -188,25 +208,40 @@ p {
 }
 
 .featured .container {
-  max-width: 50rem;
+  max-width: 61rem;
 
-  @media (max-width: 910px) {
-    max-width: 82%;
-  }   
-}
-
-.featured .col {
-  padding-bottom: 1rem;
-}
-
-@media (max-width: 800px) {
-  .featured .row {
-    display: block;
+  @media (max-width: 1000px) {
+    max-width: 50rem;
   }
 
-  .featured .col {
-    text-align: center;
-    margin: 0 auto;
+  @media (max-width: 850px) {
+    max-width: 82%;
+  }
+}
+
+.carousel-col {
+  margin: 0 2rem;
+  padding-bottom: 1.5rem;
+}
+
+@media (max-width: 850px) {
+  .featured {
+    .row {
+      display: block;
+    }
+
+    .col {
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    ul {
+      text-align: left !important;
+    }
+
+    .carousel-col {
+      padding-bottom: 2.5rem;
+    }
   }
 }
 
@@ -247,7 +282,6 @@ p {
 .carousel-cell {
   width: 100%;
 }
-
 
 .project img {
   max-width: 100%;

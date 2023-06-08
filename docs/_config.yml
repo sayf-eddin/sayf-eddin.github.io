@@ -32,17 +32,36 @@ featured:
       - "/images/bus_api.png"
       - "/images/bus_api.png"
     text: >
-      REST API built in Django for Syracuse University's Centro bus&nbsp;schedules<br>
-      • Features
+      REST API built in Django for Syracuse University’s Centro bus&nbsp;schedules
+      
+      * Features
+    
+  - title: "Dow Jones Marketing"
+    images: 
+      - "/images/wsj_pro.png"
+      - "/images/journal_house.png"
+      - "/images/wsj_store.png"
+      - "/images/wsj_email.png"
+    text: >
+      Web assets for The Wall Street Journal, MarketWatch, and Barron’s
+
+      * Multi-layered websites such as [wsjpro.com](https://www.wsjpro.com) and [journalhouse.com](https://journalhouse.com/)
+      
+      * Shop pages for news subscriptions and bundles sales typically hosted at [store.wsj.com](https://store.wsj.com)
+
+      * Hundreds of emails for commerce, customer engagement, commercial partnerships, and WSJ events
+      
 
 work:
   - company: "Hogarth Worldwide"
     role: "Front-End Developer"
     years: "2021-2022"
     description: >
-      • Worked as a web developer on Dow Jones products including The Wall Street Journal, MarketWatch, and Barron’s<br>
-      • Collaborated with copywriters, designers, and marketing managers on nearly 300 various campaigns with multiple assets<br>
-      • Built eye-catching emails, developed customer-facing shop pages with JavaScript and Webpack, co-managed 
+      * Worked as a web developer on Dow Jones products including The Wall Street Journal, MarketWatch, and Barron’s
+
+      * Collaborated with copywriters, designers, and marketing managers on nearly 300 various campaigns with multiple assets
+
+      * Built eye-catching emails, developed customer-facing shop pages with JavaScript and Webpack, co&#8209;managed 
       [wsjpro.com](https://www.wsjpro.com) through WordPress, and created an entire web platform for WSJ Journal House on Splash’s event content management system (CMS)
 
 
@@ -50,18 +69,22 @@ work:
     role: "Full-Stack Developer Intern"
     years: "2020-2021"
     description: >
-      • Built and managed pythonic applications and services for Syracuse University’s 15,000 WordPress sites<br>
-      • Collaborated with six developers and an intern on full-stack development, systems administration, and data analysis<br>
-      • Developed applications using Django, pandas, Django REST framework, Ansible Tower API, Docker, Go, Fastly, and Wagtail<br>
-      • [Read more](https://www.syracuse.edu/stories/student-interns-marketing/#s:sayf-ahmed-web-development-and-teamwork)
+      * Built and managed pythonic applications and services for Syracuse University’s 15,000 WordPress sites
+
+      * Collaborated with six developers and an intern on full-stack development, systems administration, and data analysis
+
+      * Developed applications using Django, pandas, Django REST framework, Ansible Tower API, Docker, Go, Fastly, and Wagtail
+
+      * [Read more](https://www.syracuse.edu/stories/student-interns-marketing/#s:sayf-ahmed-web-development-and-teamwork)
 
 
   - company: "Syracuse University School of Information Studies"
     role: "Junior Django Developer"
     years: "2019-2020"
     description: >
-      • Built and managed complex web apps in Django for the School of Information Studies of Syracuse University<br>
-      • Utilized test driven development, accessibility, and Kanban development with PostgreSQL and CI/CD
+      * Built and managed complex web apps in Django for the School of Information Studies of Syracuse University
+
+      * Utilized test driven development, accessibility, and Kanban development with PostgreSQL and CI/CD
 
 
 education: >
