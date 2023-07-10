@@ -1,0 +1,86 @@
+---
+layout: default
+---
+
+{% include hero.html %}
+
+<section class="about" id="about">
+  <div class="text-center">
+    <h3>◇ About Me ◇</h3>
+  </div>
+  <div class="container">
+    {% for text in site.about %}
+    {{ text | markdownify }}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="featured" id="featured">
+  <div class="text-center">
+    <h3>◇ Featured Work ◇</h3>
+  </div>
+  <div class="container">
+    {% for project in site.featured %}
+    <div class="project row align-items-center justify-content-around">
+      {% assign align = forloop.index | modulo:2 %}
+      {% if align == 1 %}
+      <div class="col-6 no-tablet">
+        <h4>{{ project.title }}</h4>
+        {{ project.text | markdownify }}
+      </div>
+      {% endif %}
+      <div class="col tablet">
+        <h4>{{ project.title }}</h4>
+        {{ project.text | markdownify }}
+      </div>
+      <div class="col carousel-col">
+        <div class="carousel">
+          {% for image in project.images %}
+          <div class="carousel-cell">
+            <a href="{{ image }}" target="_blank">
+              <img src="{{ image }}" alt="{{project.title}}">
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% if align == 0 %}
+      <div class="col-6 no-tablet">
+        <h4>{{ project.title }}</h4>
+        {{ project.text | markdownify }}
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="text-center">
+    <h3>◇ Work History ◇</h3>
+  </div>
+  <div class="container">
+    {% for job in site.work %}
+    <div class="job">
+      <h4>{{ job.company }}</h4>
+      <h5>{{ job.role }}</h5>
+      <h5>{{ job.years }}</h5>
+      <div class="desc">
+        {{ job.description | markdownify }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="education" id="education">
+  <div class="text-center">
+    <h3>◇ Education ◇</h3>
+  </div>
+  <div class="container">
+    <a href="https://www.syracuse.edu/" target="_blank">
+      <img src="{{ site.images.education }}" alt="Syracuse University">
+    </a>
+    {{ site.education | markdownify }}
+  </div>
+</section>
