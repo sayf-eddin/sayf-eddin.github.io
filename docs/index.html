@@ -6,7 +6,7 @@ layout: default
 
 <section class="about" id="about">
   <div class="text-center">
-    <h3>~ About Me ~</h3>
+    <h3>◇ About Me ◇</h3>
   </div>
   <div class="container">
     {% for text in site.about %}
@@ -17,7 +17,7 @@ layout: default
 
 <section class="featured" id="featured">
   <div class="text-center">
-    <h3>~ Featured Work ~</h3>
+    <h3>◇ Featured Work ◇</h3>
   </div>
   <div class="container">
     {% for project in site.featured %}
@@ -57,15 +57,17 @@ layout: default
 
 <section class="work" id="work">
   <div class="text-center">
-    <h3>~ Work History ~</h3>
+    <h3>◇ Work History ◇</h3>
   </div>
   <div class="container">
     {% for job in site.work %}
     <div class="job">
       <h4>{{ job.company }}</h4>
-      <h4>{{ job.role }}</h4>
+      <h5>{{ job.role }}</h5>
       <h5>{{ job.years }}</h5>
-      {{ job.description | markdownify }}
+      <div class="desc">
+        {{ job.description | markdownify }}
+      </div>
     </div>
     {% endfor %}
   </div>
@@ -73,7 +75,7 @@ layout: default
 
 <section class="education" id="education">
   <div class="text-center">
-    <h3>~ Education ~</h3>
+    <h3>◇ Education ◇</h3>
   </div>
   <div class="container">
     <a href="https://www.syracuse.edu/" target="_blank">

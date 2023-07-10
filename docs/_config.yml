@@ -18,7 +18,7 @@ images:
 about:
   - >
       My personal mission is to give to society through technology. 
-      I am always eager to learn, and I often get obsessed with accomplishing tasks — the more 
+      I am always eager to learn and often become obsessed with accomplishing tasks — the more 
       difficult the better. The time I spend heavily working on projects alone does not mean 
       I spend any less closely collaborating. I am constantly looking for ways to
       improve myself and help those&nbsp;around&nbsp;me.
@@ -27,14 +27,19 @@ about:
       friends. I also enjoy going outside to play soccer or for a&nbsp;long&nbsp;hike.
 
 featured:
-  - title: "Centro Bus Schedule API"
+  - title: "Centro Bus Schedule GTFS API"
     images: 
-      - "/images/bus_api.png"
+      - "/images/api_doc.png"
+      - "/images/SU443_routes.png"
       - "/images/bus_api.png"
     text: >
-      REST API built in Django for Syracuse University’s Centro bus&nbsp;schedules
+      REST API built in Django for Syracuse University’s Centro [bus&nbsp;schedules](https://www.centro.org/colleges/syracuse-university){:target="_blank"}
       
-      * Features
+      * Scripts to pull and read [GTFS data](https://transitfeeds.com/p/central-new-york-rta/524){:target="_blank"} and populate a PostgreSQL database with tables for services, routes, trips, and&nbsp;stops
+      
+      * Endpoints with query parameter filters for all tables and the South Campus bus schedule for&nbsp;today
+
+      * Deployable in Docker container with images for PostgreSQL, MinIO, and&nbsp;Redis
     
   - title: "Dow Jones Marketing"
     images: 
@@ -45,11 +50,11 @@ featured:
     text: >
       Web assets for The Wall Street Journal, MarketWatch, and Barron’s
 
-      * Multi-layered websites such as [wsjpro.com](https://www.wsjpro.com) and [journalhouse.com](https://journalhouse.com/)
+      * Multi-layered websites such as [wsjpro.com](https://www.wsjpro.com){:target="_blank"} and [journalhouse.com](https://journalhouse.com/){:target="_blank"}
       
-      * Shop pages for news subscriptions and bundles sales typically hosted at [store.wsj.com](https://store.wsj.com)
+      * Shop pages for news subscriptions and bundles sales typically hosted at [store.wsj.com](https://store.wsj.com){:target="_blank"}
 
-      * Hundreds of emails for commerce, customer engagement, commercial partnerships, and WSJ events
+      * Hundreds of emails for commerce, customer engagement, commercial partnerships, and WSJ&nbsp;events
       
 
 work:
@@ -57,34 +62,34 @@ work:
     role: "Front-End Developer"
     years: "2021-2022"
     description: >
-      * Worked as a web developer on Dow Jones products including The Wall Street Journal, MarketWatch, and Barron’s
+      * Worked as a web developer on Dow Jones products including The Wall Street Journal, MarketWatch, and&nbsp;Barron’s
 
-      * Collaborated with copywriters, designers, and marketing managers on nearly 300 various campaigns with multiple assets
+      * Collaborated with copywriters, designers, and marketing managers on nearly 300 various campaigns with multiple&nbsp;assets
 
       * Built eye-catching emails, developed customer-facing shop pages with JavaScript and Webpack, co&#8209;managed 
-      [wsjpro.com](https://www.wsjpro.com) through WordPress, and created an entire web platform for WSJ Journal House on Splash’s event content management system (CMS)
+      [wsjpro.com](https://www.wsjpro.com){:target="_blank"} through WordPress, and created an entire web platform for WSJ Journal House on Splash’s event content management system (CMS)
 
 
   - company: "Syracuse University Division of Marketing and Communications"
     role: "Full-Stack Developer Intern"
     years: "2020-2021"
     description: >
-      * Built and managed pythonic applications and services for Syracuse University’s 15,000 WordPress sites
+      * Built and managed pythonic applications and services for Syracuse University’s 15,000 WordPress&nbsp;sites
 
-      * Collaborated with six developers and an intern on full-stack development, systems administration, and data analysis
+      * Collaborated with six developers and an intern on full-stack development, systems administration, and data&nbsp;analysis
 
-      * Developed applications using Django, pandas, Django REST framework, Ansible Tower API, Docker, Go, Fastly, and Wagtail
+      * Developed applications using Django, pandas, Django REST framework, Ansible Tower API, Docker, Go, Fastly, and&nbsp;Wagtail
 
-      * [Read more](https://www.syracuse.edu/stories/student-interns-marketing/#s:sayf-ahmed-web-development-and-teamwork)
+      * [Read more](https://www.syracuse.edu/stories/student-interns-marketing/#s:sayf-ahmed-web-development-and-teamwork){:target="_blank"}
 
 
   - company: "Syracuse University School of Information Studies"
     role: "Junior Django Developer"
     years: "2019-2020"
     description: >
-      * Built and managed complex web apps in Django for the School of Information Studies of Syracuse University
+      * Built and managed complex web apps in Django for the School of Information Studies of Syracuse&nbsp;University
 
-      * Utilized test driven development, accessibility, and Kanban development with PostgreSQL and CI/CD
+      * Utilized test driven development, accessibility, and Kanban development with PostgreSQL and&nbsp;CI/CD
 
 
 education: >
