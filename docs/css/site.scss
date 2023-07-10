@@ -97,12 +97,13 @@ h3 {
 }
 
 h4 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  padding-bottom: 0.7rem;
   margin-bottom: 0.3rem;
 }
 
 h5 {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   margin-bottom: 0.3rem;
 }
 
@@ -113,6 +114,10 @@ p {
 
 ul {
   padding-left: 1.2rem;
+}
+
+li {
+  padding-bottom: 0.5rem;
 }
 
 .bg-dark {
@@ -289,8 +294,8 @@ ul {
 }
 
 .project {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 1.7rem;
+  padding-bottom: 1.7rem;
 }
 
 .work {
@@ -300,6 +305,10 @@ ul {
 .job {
   padding-top: 1rem;
   padding-bottom: 1rem;
+
+  .desc {
+    padding-top: 0.5rem;
+  }
 }
 
 .education {
