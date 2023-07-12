@@ -10,7 +10,7 @@ url: "https://sayf-eddin.me/"
 
 # Compressed with TinyPNG
 images:
-  favicon: "/images/favicon.png"
+  favicon: "/images/favicon.ico"
   hero: "/images/profile.jpg"
   seo: "/images/seo.png"
   education: "/images/syracuse.png"
@@ -80,7 +80,7 @@ work:
 
       * Developed applications using Django, pandas, Django REST framework, Ansible Tower API, Docker, Go, Fastly, and&nbsp;Wagtail
 
-      * [Read more](https://www.syracuse.edu/stories/student-interns-marketing/#s:sayf-ahmed-web-development-and-teamwork){:target="_blank"}
+      * [Read more at syracuse.edu](https://www.syracuse.edu/stories/student-interns-marketing/#s:sayf-ahmed-web-development-and-teamwork){:target="_blank"}
 
 
   - company: "Syracuse University School of Information Studies"
