@@ -108,6 +108,9 @@ footer:
   - name: "Resume"
     link: "/assets/Sayf Ahmed Resume.pdf"
 
+  - name: "HackerRank"
+    link: "https://www.hackerrank.com/sayf_eddin_ahmed"
+
 # Build settings
 theme: minima
 
