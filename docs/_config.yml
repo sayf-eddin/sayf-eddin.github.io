@@ -19,9 +19,9 @@ about:
   - >
       My personal mission is to give to society through technology. 
       I am always eager to learn and often become obsessed with accomplishing tasks — the more 
-      difficult the better. The time I spend heavily working on projects alone does not mean 
-      I spend any less closely collaborating. I am constantly looking for ways to
-      improve myself and help those&nbsp;around&nbsp;me.
+      difficult the better. Within my various endeavors, I spend my time working on projects alone 
+      and closely collaborating. I am constantly looking for ways to improve myself and help 
+      those&nbsp;around&nbsp;me.
   - >
       I love exercising my creativity by playing guitar or painting, especially with 
       friends. I also enjoy going outside to play soccer or for a long hike.
@@ -63,23 +63,23 @@ work:
     role: "Front-End Developer"
     years: "2021-2022"
     description: >
-      * Worked as a web developer on Dow Jones products including The Wall Street Journal, MarketWatch, and&nbsp;Barron’s
+      * Perfomed as a web developer on Dow Jones products including The Wall Street Journal, MarketWatch, and&nbsp;Barron’s
 
       * Collaborated with copywriters, designers, and marketing managers on nearly 300 time-sensitive campaigns with multiple&nbsp;assets
 
-      * Built eye-catching emails, developed customer-facing shop pages with JavaScript and Webpack, co&#8209;managed 
-      [wsjpro.com](https://www.wsjpro.com){:target="_blank"} through WordPress, and created an entire web platform for WSJ Journal House on Splash’s event content management system (CMS)
+      * Engineered eye-catching emails, developed customer-facing shop pages with JavaScript and Webpack, co&#8209;managed 
+      [wsjpro.com](https://www.wsjpro.com){:target="_blank"} through WordPress, and innovated an entire web platform for WSJ Journal House on Splash’s event content management system (CMS)
 
 
   - company: "Syracuse University Division of Marketing and Communications"
     role: "Full-Stack Developer Intern"
     years: "2020-2021"
     description: >
-      * Built and managed pythonic applications and services for Syracuse University’s 15,000 WordPress&nbsp;sites
+      * Implemented and managed pythonic applications and services for Syracuse University’s 15,000 WordPress&nbsp;sites
 
-      * Collaborated on a team of developers on full-stack agile development, systems administration, and data&nbsp;analysis
+      * Contributed on a team of developers on full-stack agile development, systems administration, and data&nbsp;analysis
 
-      * Developed applications using Django, pandas, Django REST framework, Ansible Tower API, Docker, Go, Fastly, and&nbsp;Wagtail
+      * Programmed applications using Django, pandas, Django REST framework, Ansible Tower API, Docker, Go, Fastly, and&nbsp;Wagtail
 
       * [Read more at syracuse.edu](https://www.syracuse.edu/stories/student-interns-marketing/#s:sayf-ahmed-web-development-and-teamwork){:target="_blank"}
 
@@ -88,7 +88,7 @@ work:
     role: "Junior Django Developer"
     years: "2019-2020"
     description: >
-      * Built and managed complex web apps in Django for the School of Information Studies of Syracuse&nbsp;University
+      * Designed and improved complex web apps in Django for the School of Information Studies of Syracuse&nbsp;University
 
       * Utilized test driven development, accessibility, and Kanban development with PostgreSQL and&nbsp;CI/CD
 
