@@ -63,32 +63,39 @@ work:
     role: "Front-End Developer"
     years: "2021-2022"
     description: >
-      * Perfomed as a web developer on Dow Jones products including The Wall Street Journal, MarketWatch, and Barron’s for ~4,000,000&nbsp;subscribers
+      * Created time&#8209;sensitive marketing assets for over 300 campaigns for The Wall Street Journal, MarketWatch, 
+      and Barron’s ~4,000,000 current readers and hundreds of thousands of potential&nbsp;ones
 
-      * Collaborated with copywriters, designers, and marketing managers on nearly 300 time-sensitive campaigns with multiple assets&nbsp;each
-
-      * Engineered eye-catching emails, developed customer-facing shop pages with JavaScript and Webpack, co&#8209;managed 
-      [wsjpro.com](https://www.wsjpro.com){:target="_blank"} through WordPress, and innovated an entire web platform for WSJ Journal House on Splash’s event content management system (CMS)
+      * Co&#8209;managed [wsjpro.com](https://www.wsjpro.com){:target="_blank"} through WordPress by building PHP modules with 
+      JavaScript to give hundreds of premium users a premium&nbsp;experience
+      
+      * Composed shop pages for news subscriptions and bundles sales with JavaScript and Webpack that 100% of customers interacted&nbsp;with
+      
+      * Created an entire web platform for WSJ Journal House on Splash’s event content management system&nbsp;(CMS)
 
 
   - company: "Syracuse University Division of Marketing and Communications"
     role: "Full-Stack Developer Intern"
     years: "2020-2021"
     description: >
-      * Integrated and troubleshooted high-level software systems for Syracuse University which affected ~15,000 WordPress&nbsp;sites
+      * Managed high&#8209;level software systems for Syracuse University which affected ~15,000 WordPress&nbsp;sites
 
-      * Contributed on a team of developers on full-stack agile development, systems administration, and problem-solving
-
-      * Programmed applications using Django, pandas, Django REST framework, Ansible Tower API, Docker, Go, Fastly, and&nbsp;Wagtail
+      * Developed an API for Centro’s bus data with pandas and Django to allow implementation for ~300&nbsp;routes
+      
+      * Deployed a multi&#8209;threaded WordPress site management tool through full dev cycle using Django and Ansible 
+      Tower API for thousands of site owners to backup, archive, nuke, and more with a single&nbsp;click
 
 
   - company: "Syracuse University School of Information Studies"
     role: "Junior Django Developer"
     years: "2019-2020"
     description: >
-      * Designed and improved complex web apps in Django for the School of Information Studies of Syracuse&nbsp;University
+      * Integrated and troubleshooted complex Django web application using test driven development, PostgreSQL, CI/CD, 
+      accessibility, and Kanban&nbsp;development
 
-      * Learned test driven development, PostgreSQL relational databases, CI/CD, accessibility, and Kanban&nbsp;development
+      * Constructed a web app for university events with approval system and JavaScript multi&#8209;view&nbsp;calendar
+      
+      * Engineered a form builder with JavaScript to digitize and facilitate college transfer application&nbsp;process
 
 
 education: >
