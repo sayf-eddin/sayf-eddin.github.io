@@ -9,8 +9,12 @@
       <div class="container">
         <div class="row justify-content-center">
           {% for button in site.footer %}
-          <div class="col button">
-            <a href="{{ button.link }}" target="_blank">{{ button.name }}</a>
+          <div class="col">
+            <a class="d-flex justify-content-center" href="{{ button.link }}" target="_blank">
+              <div class="button">
+                {{ button.name }}
+              </div>
+            </a>
           </div>
           {% endfor %}
         </div>
