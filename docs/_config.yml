@@ -25,7 +25,6 @@ about:
   - >
       I love exercising my creativity by playing guitar or painting, especially with 
       friends. I also enjoy going outside to play soccer or for a long hike.
-      My most recent achievement is climbing Mont&nbsp;Blanc.
 
 featured:
   - title: "Centro Bus Schedule GTFS API"
@@ -63,13 +62,13 @@ work:
     role: "Front-End Developer"
     years: "2021-2022"
     description: >
-      * Created time&#8209;sensitive marketing assets for over 300 campaigns for The Wall Street Journal, MarketWatch, 
-      and Barron’s ~4,000,000 current readers and hundreds of thousands of potential&nbsp;ones
+      * Created time&#8209;sensitive marketing assets for over 300 campaigns for The Wall Street Journal, Barron’s, and
+      MarketWatch, enhancing engagement with ~4,000,000 current readers and attracting new&nbsp;subscribers
 
       * Co&#8209;managed [wsjpro.com](https://www.wsjpro.com){:target="_blank"} through WordPress by building PHP modules with 
-      JavaScript to give hundreds of premium users a premium&nbsp;experience
+      JavaScript, improving the user experience for hundreds of premium&nbsp;users
       
-      * Composed shop pages for news subscriptions and bundles sales with JavaScript and Webpack that 100% of customers interacted&nbsp;with
+      * Composed shop pages for news subscriptions and bundles sales with JavaScript and Webpack, enhancing all customer interaction and sales with&nbsp;efficiency
       
       * Created an entire web platform for WSJ Journal House on Splash’s event content management system&nbsp;(CMS)
 
@@ -78,9 +77,9 @@ work:
     role: "Full-Stack Developer Intern"
     years: "2020-2021"
     description: >
-      * Managed high&#8209;level software systems for Syracuse University which affected ~15,000 WordPress&nbsp;sites
+      * Managed high&#8209;level software systems for Syracuse University, affecting ~15,000 WordPress&nbsp;sites
 
-      * Developed an API for Centro’s bus data with pandas and Django to allow implementation for ~300&nbsp;routes
+      * Developed an API for Centro’s bus data with pandas and Django, allowing efficient implementation and discovery for ~300&nbsp;routes
       
       * Deployed a multi&#8209;threaded WordPress site management tool through full dev cycle using Django and Ansible 
       Tower API for thousands of site owners to backup, archive, nuke, and more with a single&nbsp;click
@@ -93,9 +92,11 @@ work:
       * Integrated and troubleshooted complex Django web application using test driven development, PostgreSQL, CI/CD, 
       accessibility, and Kanban&nbsp;development
 
-      * Constructed a web app for university events with approval system and JavaScript multi&#8209;view&nbsp;calendar
+      * Constructed a web app for university events with an approval system and a JavaScript multi&#8209;view calendar, 
+      streamlining event management and&nbsp;scheduling
       
-      * Engineered a form builder with JavaScript to digitize and facilitate college transfer application&nbsp;process
+      * Engineered a form builder with JavaScript to digitize and facilitate college transfer application process, 
+      reducing manual paperwork and improving application&nbsp;efficiency
 
 
 education: >
