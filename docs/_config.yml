@@ -89,7 +89,7 @@ work:
     role: "Junior Django Developer"
     years: "2019-2020"
     description: >
-      * Integrated and troubleshooted complex Django web application using test driven development, PostgreSQL, CI/CD, 
+      * Integrated and troubleshooted complex Django web applications using relational databases, test driven development, PostgreSQL, CI/CD, 
       accessibility, and Kanban&nbsp;development
 
       * Constructed a web app for university events with an approval system and a JavaScript multi&#8209;view calendar, 
