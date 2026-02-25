@@ -62,8 +62,8 @@ layout: default
   <div class="container">
     {% for job in site.work %}
     <div class="job">
-      <h4>{{ job.company }}</h4>
-      <h5>{{ job.role }}</h5>
+      <h4>{{ job.role }}</h4>
+      <h5>{{ job.company }}</h5>
       <h5>{{ job.years }}</h5>
       <div class="desc">
         {{ job.description | markdownify }}

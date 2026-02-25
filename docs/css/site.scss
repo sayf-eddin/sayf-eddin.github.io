@@ -8,8 +8,8 @@ body {
 
 $font_color: black;
 $dark_blue: #050050;
-$blue: #9b96ca;
-$light_blue: #ebeaf6;
+$blue: #847bce;
+$light_blue: #e6e5f7;
 
 * {
   font-family: 'Source Sans Pro', sans-serif;
@@ -34,9 +34,16 @@ a {
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 500;
+  margin: 0.5rem 0.8rem;
 
   &:hover {
-    color: $dark_blue;
+    color: white;
+    transition: 0.4s;
+    text-decoration: none;
+  }
+
+  .button:hover {
+    color: white;
     transition: 0.4s;
   }
 }
@@ -45,7 +52,7 @@ a {
   border: 0.2rem solid $blue;
   border-radius: 0.4rem;
   padding: 0.6rem;
-  margin: 0.5rem 1.2rem;
+  width: 100%;
 
   &:hover {
     background-color: $blue;
@@ -155,8 +162,9 @@ li {
 .nav-item p:hover,
 .nav-item p:focus {
   cursor: pointer;
-  color: $blue !important;
+  color: $light_blue !important;
   transition: all 0.2s ease;
+  text-decoration: underline;
 }
 
 .navbar-toggler {
@@ -332,7 +340,7 @@ li {
 
 .footer .col {
   flex: 0 0 auto;
-  width: 8rem; 
+  width: 11rem; 
 }
 
 .footer_img {
