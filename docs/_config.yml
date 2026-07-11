@@ -13,6 +13,10 @@ url: "https://sayf-eddin.me"
 # falls back to jekyll-theme-primer and leaks its unused assets into the build.
 theme: null
 
+# jekyll-feed provides the {% feed_meta %} tag used in _includes/head.html.
+plugins:
+  - jekyll-feed
+
 # Compressed with TinyPNG
 images:
   favicon: "/assets/images/favicon.ico"
