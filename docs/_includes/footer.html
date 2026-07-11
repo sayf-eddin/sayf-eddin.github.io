@@ -1,0 +1,16 @@
+<section class="footer" id="footer">
+  <div class="container">
+    <div class="row justify-content-center">
+      {% for button in site.data.footer %}
+      <div class="col">
+        <a class="d-flex justify-content-center" href="{{ button.link }}" target="_blank" rel="noopener noreferrer">
+          <div class="button">
+            {{ button.name }}
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="footer_img"></div>
+  </div>
+</section>

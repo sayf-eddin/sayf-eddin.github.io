@@ -1,0 +1,28 @@
+- title: "Centro Bus Schedule GTFS API"
+  images:
+    - "/assets/images/api_doc.png"
+    - "/assets/images/SU443_routes.png"
+    - "/assets/images/bus_api.png"
+  text: >
+    REST API built in Django for Syracuse University’s Centro [bus&nbsp;schedules](https://www.centro.org/colleges/syracuse-university){:target="_blank" rel="noopener noreferrer"}
+
+    * Scripts to pull and read [GTFS data](https://transitfeeds.com/p/central-new-york-rta/524){:target="_blank" rel="noopener noreferrer"} and populate a PostgreSQL database with tables for services, routes, trips, and&nbsp;stops
+
+    * Endpoints with query parameter filters for all tables and the South Campus bus schedule for&nbsp;today
+
+    * Deployable in Docker container with images for PostgreSQL, MinIO, and&nbsp;Redis
+
+- title: "Dow Jones Marketing"
+  images:
+    - "/assets/images/wsj_pro.png"
+    - "/assets/images/journal_house.png"
+    - "/assets/images/wsj_store.png"
+    - "/assets/images/wsj_email.png"
+  text: >
+    Web assets for The Wall Street Journal, MarketWatch, and Barron’s
+
+    * Multi-layered websites such as [wsjpro.com](https://www.wsjpro.com){:target="_blank" rel="noopener noreferrer"} and [journalhouse.com](https://journalhouse.com/){:target="_blank" rel="noopener noreferrer"}
+
+    * Shop pages for news subscriptions and bundles sales typically hosted at [store.wsj.com](https://store.wsj.com){:target="_blank" rel="noopener noreferrer"}
+
+    * Hundreds of emails for commerce, customer engagement, commercial partnerships, and WSJ&nbsp;events
