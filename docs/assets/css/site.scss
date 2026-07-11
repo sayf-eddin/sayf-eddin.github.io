@@ -10,7 +10,7 @@ body {
   font-size: 1.2rem;
 }
 
-#about, #featured, #education, #footer {
+#about, #featured, #work, #education, #footer {
   scroll-margin-top: 4rem;
 }
 
@@ -140,7 +140,7 @@ li {
   }    
 }
 
-.nav-item p {
+.nav-item .nav-link {
   color: white !important;
   margin-bottom: 0;
   padding-left: 4rem !important;
@@ -149,16 +149,16 @@ li {
   @media (max-width: 930px) {
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
-  } 
-  
+  }
+
   @media (max-width: 576px) {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
 }
 
-.nav-item p:hover,
-.nav-item p:focus {
+.nav-item .nav-link:hover,
+.nav-item .nav-link:focus {
   cursor: pointer;
   color: $light_blue !important;
   transition: all 0.2s ease;
