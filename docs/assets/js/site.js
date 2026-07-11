@@ -1,8 +1,3 @@
-function navScroll(section) {
-  var elem = document.getElementById(section);
-  window.scroll(0, elem.offsetTop - 40);
-}
-
 var elems = document.querySelectorAll('.carousel');
 for (var i=0, len = elems.length; i < len; i++) {
   var elem = elems[i];

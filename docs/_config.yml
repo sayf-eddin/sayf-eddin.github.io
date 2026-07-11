@@ -6,126 +6,16 @@ title: Sayf Eddin Ahmed
 description: >-
   Pursuing my goals to give to society through technology.
 baseurl: ""
-url: "https://sayf-eddin.me/"
+url: "https://sayf-eddin.me"
+
+# The layout in _layouts/default.html is fully custom and doesn't use any
+# theme. Explicitly disable one, otherwise the github-pages gem silently
+# falls back to jekyll-theme-primer and leaks its unused assets into the build.
+theme: null
 
 # Compressed with TinyPNG
 images:
-  favicon: "/images/favicon.ico"
-  hero: "/images/profile.png"
-  seo: "/images/seo.png"
-  education: "/images/syracuse.png"
-
-about:
-  - >
-      My personal mission is to give to society through technology. 
-      I am always eager to learn and often become obsessed with accomplishing tasks — the more 
-      difficult the better. Within my various endeavors, I spend my time working on projects alone 
-      and closely collaborating. I am constantly looking for ways to improve myself and help 
-      those&nbsp;around&nbsp;me.
-  - >
-      I love exercising my creativity by playing guitar or painting, especially with 
-      friends. I also enjoy going outside to play soccer or for a long hike.
-
-featured:
-  - title: "Centro Bus Schedule GTFS API"
-    images: 
-      - "/images/api_doc.png"
-      - "/images/SU443_routes.png"
-      - "/images/bus_api.png"
-    text: >
-      REST API built in Django for Syracuse University’s Centro [bus&nbsp;schedules](https://www.centro.org/colleges/syracuse-university){:target="_blank"}
-      
-      * Scripts to pull and read [GTFS data](https://transitfeeds.com/p/central-new-york-rta/524){:target="_blank"} and populate a PostgreSQL database with tables for services, routes, trips, and&nbsp;stops
-      
-      * Endpoints with query parameter filters for all tables and the South Campus bus schedule for&nbsp;today
-
-      * Deployable in Docker container with images for PostgreSQL, MinIO, and&nbsp;Redis
-    
-  - title: "Dow Jones Marketing"
-    images: 
-      - "/images/wsj_pro.png"
-      - "/images/journal_house.png"
-      - "/images/wsj_store.png"
-      - "/images/wsj_email.png"
-    text: >
-      Web assets for The Wall Street Journal, MarketWatch, and Barron’s
-
-      * Multi-layered websites such as [wsjpro.com](https://www.wsjpro.com){:target="_blank"} and [journalhouse.com](https://journalhouse.com/){:target="_blank"}
-      
-      * Shop pages for news subscriptions and bundles sales typically hosted at [store.wsj.com](https://store.wsj.com){:target="_blank"}
-
-      * Hundreds of emails for commerce, customer engagement, commercial partnerships, and WSJ&nbsp;events
-      
-
-work:
-  - company: "Hogarth Worldwide"
-    role: "Front-End Developer"
-    years: "2021-2022"
-    description: >
-      * Created time&#8209;sensitive marketing assets for over 300 campaigns for The Wall Street Journal, Barron’s, and
-      MarketWatch, enhancing engagement with ~4,000,000 current readers and attracting new&nbsp;subscribers
-
-      * Co&#8209;managed [wsjpro.com](https://www.wsjpro.com){:target="_blank"} through WordPress by building PHP modules with 
-      JavaScript, improving the user experience for hundreds of premium&nbsp;users
-      
-      * Composed shop pages for news subscriptions and bundles sales with JavaScript and Webpack, enhancing all customer interaction and sales with&nbsp;efficiency
-      
-      * Created an entire web platform for WSJ Journal House on Splash’s event content management system&nbsp;(CMS)
-
-
-  - company: "Syracuse University Division of Marketing and Communications"
-    role: "Full-Stack Developer Intern"
-    years: "2020-2021"
-    description: >
-      * Managed high&#8209;level software systems for Syracuse University, affecting ~15,000 WordPress&nbsp;sites
-
-      * Developed an API for Centro’s bus data with pandas and Django, allowing efficient implementation and discovery for ~300&nbsp;routes
-      
-      * Deployed a multi&#8209;threaded WordPress site management tool through full dev cycle using Django and Ansible 
-      Tower API for thousands of site owners to backup, archive, nuke, and more with a single&nbsp;click
-
-
-  - company: "Syracuse University School of Information Studies"
-    role: "Junior Django Developer"
-    years: "2019-2020"
-    description: >
-      * Integrated and troubleshooted complex Django web applications using relational databases, test driven development, PostgreSQL, CI/CD, 
-      accessibility, and Kanban&nbsp;development
-
-      * Constructed a web app for university events with an approval system and a JavaScript multi&#8209;view calendar, 
-      streamlining event management and&nbsp;scheduling
-      
-      * Engineered a form builder with JavaScript to digitize and facilitate college transfer application process, 
-      reducing manual paperwork and improving application&nbsp;efficiency
-
-
-education: >
-  <b>Bachelor of Science in Computer&nbsp;Science</b><br>
-  Minor in Cognitive&nbsp;Science<br>
-  Magna Cum Laude<br>
-  May 2021<br>
-
-footer:
-  - name: "GitHub"
-    link: "https://github.com/sayf-eddin"
-
-  - name: "LinkedIn"
-    link: "https://www.linkedin.com/in/sayf-ahmed/"
-
-  - name: "Resume"
-    link: "/assets/Sayf_Ahmed_Resume.pdf"
-
-# Build settings
-theme: minima
-
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+  favicon: "/assets/images/favicon.ico"
+  hero: "/assets/images/profile.png"
+  seo: "/assets/images/seo.png"
+  education: "/assets/images/syracuse.png"

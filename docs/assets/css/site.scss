@@ -1,9 +1,17 @@
 --- 
 --- 
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: white;
   font-size: 1.2rem;
+}
+
+#about, #featured, #education, #footer {
+  scroll-margin-top: 4rem;
 }
 
 $font_color: black;
@@ -60,18 +68,8 @@ a {
   }
 }
 
-.mobile, .tablet {
+.tablet {
   display: none;
-}
-
-@media (max-width: 576px) {
-  .desktop {
-    display: none;
-  }
-
-  .mobile {
-    display: block;
-  }
 }
 
 @media (max-width: 850px) {
@@ -300,7 +298,6 @@ li {
 .project img {
   max-width: 100%;
   aspect-ratio: 4 / 3;
-  // padding-bottom: 1.2rem;
 }
 
 .project {
@@ -347,12 +344,12 @@ li {
   max-width: 3rem;
   padding-top: 5rem;
   margin: 4rem auto 0.5rem;
-  background-image: url("/images/link.png");
+  background-image: url("/assets/images/link.png");
   background-repeat: no-repeat;
   background-size: contain;
 
   &:hover {
-    background-image: url("/images/link_psy.png");
+    background-image: url("/assets/images/link_psy.png");
     margin-top: 1rem;
     padding-top: 9rem;
   }

@@ -1,0 +1,39 @@
+<section class="featured" id="featured">
+  <div class="text-center">
+    <h3>◇ Featured Work ◇</h3>
+  </div>
+  <div class="container">
+    {% for project in site.data.featured %}
+    <div class="project row align-items-center justify-content-around">
+      {% assign align = forloop.index | modulo:2 %}
+      {% if align == 1 %}
+      <div class="col-6 no-tablet">
+        <h4>{{ project.title }}</h4>
+        {{ project.text | markdownify }}
+      </div>
+      {% endif %}
+      <div class="col tablet">
+        <h4>{{ project.title }}</h4>
+        {{ project.text | markdownify }}
+      </div>
+      <div class="col carousel-col">
+        <div class="carousel">
+          {% for image in project.images %}
+          <div class="carousel-cell">
+            <a href="{{ image }}" target="_blank" rel="noopener noreferrer">
+              <img src="{{ image }}" alt="{{ project.title }} {{ forloop.index }}">
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% if align == 0 %}
+      <div class="col-6 no-tablet">
+        <h4>{{ project.title }}</h4>
+        {{ project.text | markdownify }}
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
