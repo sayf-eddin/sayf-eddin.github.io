@@ -34,7 +34,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="{{ '/assets/lib/bootstrap/bootstrap.min.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/lib/flickity/flickity.min.css' | relative_url }}">
-  <link rel="stylesheet" type="text/css" href="{{ '/assets/css/site.css' | relative_url }}" />
+  <link rel="stylesheet" type="text/css" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
   {% feed_meta %}
 
   <!-- Favicon -->
