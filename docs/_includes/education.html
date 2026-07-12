@@ -1,10 +1,10 @@
-<section class="education" id="education">
+<section class="education" id="education" aria-labelledby="education-heading">
   <div class="text-center">
-    <h3>◇ Education ◇</h3>
+    <h3 id="education-heading"><span class="diamond" aria-hidden="true">◇</span> Education <span class="diamond" aria-hidden="true">◇</span></h3>
   </div>
   <div class="container">
     <a href="https://www.syracuse.edu/" target="_blank" rel="noopener noreferrer">
-      <img src="{{ site.images.education }}" alt="Syracuse University">
+      <img src="{{ site.images.education }}" alt="Syracuse University" width="480" height="180" loading="lazy">
     </a>
     {{ site.data.education.text | markdownify }}
   </div>

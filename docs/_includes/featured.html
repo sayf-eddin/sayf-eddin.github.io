@@ -1,6 +1,6 @@
-<section class="featured" id="featured">
+<section class="featured" id="featured" aria-labelledby="featured-heading">
   <div class="text-center">
-    <h3>◇ Featured Work ◇</h3>
+    <h3 id="featured-heading"><span class="diamond" aria-hidden="true">◇</span> Featured Work <span class="diamond" aria-hidden="true">◇</span></h3>
   </div>
   <div class="container">
     {% for project in site.data.featured %}
@@ -17,15 +17,18 @@
         {{ project.text | markdownify }}
       </div>
       <div class="col carousel-col">
-        <div class="carousel">
+        <div class="carousel" aria-roledescription="carousel" aria-label="{{ project.title }} screenshots">
           {% for image in project.images %}
           <div class="carousel-cell">
             <a href="{{ image }}" target="_blank" rel="noopener noreferrer">
-              <img src="{{ image }}" alt="{{ project.title }} {{ forloop.index }}">
+              <img src="{{ image }}" alt="{{ project.title }} screenshot {{ forloop.index }}" width="800" height="600" loading="lazy">
             </a>
           </div>
           {% endfor %}
         </div>
+        <button type="button" class="carousel-pause" aria-pressed="false" aria-label="Pause {{ project.title }} slideshow">
+          <span class="carousel-pause-icon" aria-hidden="true">&#10074;&#10074;</span>
+        </button>
       </div>
       {% if align == 0 %}
       <div class="col-6 no-tablet">

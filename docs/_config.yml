@@ -17,9 +17,8 @@ theme: null
 plugins:
   - jekyll-feed
 
-# Compressed with TinyPNG
 images:
   favicon: "/assets/images/favicon.ico"
-  hero: "/assets/images/profile.png"
-  seo: "/assets/images/seo.png"
-  education: "/assets/images/syracuse.png"
+  hero: "/assets/images/profile.webp"
+  seo: "/assets/images/seo.jpg"
+  education: "/assets/images/syracuse.webp"

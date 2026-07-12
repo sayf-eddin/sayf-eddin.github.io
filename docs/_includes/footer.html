@@ -1,9 +1,13 @@
-<section class="footer" id="footer">
+<section class="footer" id="footer" aria-label="Links">
   <div class="container">
     <div class="row justify-content-center">
       {% for button in site.data.footer %}
       <div class="col">
+        {% if button.name == "GitHub" or button.name == "LinkedIn" %}
+        <a class="d-flex justify-content-center" href="{{ button.link }}" target="_blank" rel="me noopener noreferrer">
+        {% else %}
         <a class="d-flex justify-content-center" href="{{ button.link }}" target="_blank" rel="noopener noreferrer">
+        {% endif %}
           <div class="button">
             {{ button.name }}
           </div>

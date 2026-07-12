@@ -1,13 +1,58 @@
---- 
---- 
+---
+---
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("{{ '/assets/fonts/source-sans-pro-latin-400.woff2' | relative_url }}") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   background-color: white;
   font-size: 1.2rem;
+}
+
+// The width/height HTML attributes on <img> set an intrinsic ratio so the
+// browser can reserve layout space before the image loads, but they also
+// map to a low-priority "height" value that otherwise beats aspect-ratio
+// (which only fills in a dimension left as auto). Overriding it here lets
+// each component's width/max-width + aspect-ratio rules size the image.
+img {
+  height: auto;
+}
+
+.skip-link {
+  position: absolute;
+  top: -3.5rem;
+  left: 0.5rem;
+  z-index: 2000;
+  background-color: #050050;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 0 0 0.4rem 0.4rem;
+  transition: top 0.2s ease;
+
+  &:focus {
+    top: 0;
+    color: white;
+  }
+}
+
+.not-found {
+  padding: 8rem 1rem 4rem;
 }
 
 #about, #featured, #work, #education, #footer {
@@ -35,6 +80,12 @@ a {
     transition: 0.4s;
     text-decoration: underline;
   }
+}
+
+// Inline links within body copy need a non-color cue at rest, not just on
+// hover, so they're distinguishable from surrounding bold text.
+p a, li a {
+  text-decoration: underline;
 }
 
 .footer a {
@@ -83,17 +134,13 @@ a {
 }
 
 h1 {
-  font-size: 2.5rem;
-
-  @media (max-width: 400px) {
-    font-size: 2.1rem;
-  }
+  // calc() keeps old libsass (used by the github-pages gem) from trying to
+  // evaluate rem + vw itself, which fails since it can't mix those units.
+  font-size: clamp(2.1rem, calc(1.81rem + 1.43vw), 2.5rem);
 }
 
 h2 {
-  @media (max-width: 400px) {
-    font-size: 1.7rem;
-  }
+  font-size: clamp(1.7rem, calc(1.49rem + 1.07vw), 2rem);
 }
 
 h3 {
@@ -165,6 +212,11 @@ li {
   text-decoration: underline;
 }
 
+.nav-item .nav-link[aria-current="location"] {
+  color: $light_blue !important;
+  text-decoration: underline;
+}
+
 .navbar-toggler {
   margin-left: 1rem !important;
   padding-top: 0.5rem;
@@ -232,8 +284,32 @@ li {
 }
 
 .carousel-col {
+  position: relative;
   margin: 0 2rem;
   padding-bottom: 1.5rem;
+}
+
+.carousel-pause {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 0.1rem solid $blue;
+  border-radius: 0.3rem;
+  padding: 0.3rem 0.5rem;
+  line-height: 1;
+  cursor: pointer;
+
+  &:hover, &:focus-visible {
+    background-color: $blue;
+    color: white;
+    transition: 0.4s;
+  }
+}
+
+.carousel-pause-icon {
+  font-size: 0.8rem;
 }
 
 @media (max-width: 850px) {
@@ -344,12 +420,12 @@ li {
   max-width: 3rem;
   padding-top: 5rem;
   margin: 4rem auto 0.5rem;
-  background-image: url("/assets/images/link.png");
+  background-image: url("/assets/images/link.webp");
   background-repeat: no-repeat;
   background-size: contain;
 
   &:hover {
-    background-image: url("/assets/images/link_psy.png");
+    background-image: url("/assets/images/link_psy.webp");
     margin-top: 1rem;
     padding-top: 9rem;
   }

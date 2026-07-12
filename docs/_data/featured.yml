@@ -1,8 +1,8 @@
 - title: "Centro Bus Schedule GTFS API"
   images:
-    - "/assets/images/api_doc.png"
-    - "/assets/images/SU443_routes.png"
-    - "/assets/images/bus_api.png"
+    - "/assets/images/api_doc.webp"
+    - "/assets/images/SU443_routes.webp"
+    - "/assets/images/bus_api.webp"
   text: >
     REST API built in Django for Syracuse University’s Centro [bus&nbsp;schedules](https://www.centro.org/colleges/syracuse-university){:target="_blank" rel="noopener noreferrer"}
 
@@ -14,10 +14,10 @@
 
 - title: "Dow Jones Marketing"
   images:
-    - "/assets/images/wsj_pro.png"
-    - "/assets/images/journal_house.png"
-    - "/assets/images/wsj_store.png"
-    - "/assets/images/wsj_email.png"
+    - "/assets/images/wsj_pro.webp"
+    - "/assets/images/journal_house.webp"
+    - "/assets/images/wsj_store.webp"
+    - "/assets/images/wsj_email.webp"
   text: >
     Web assets for The Wall Street Journal, MarketWatch, and Barron’s
 
