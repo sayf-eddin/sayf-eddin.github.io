@@ -1,20 +1,24 @@
-<section class="footer" id="footer" aria-label="Links">
+<section class="footer" id="footer" aria-labelledby="footer-heading">
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="section-head reveal">
+      <p class="section-kicker">05 &middot; Links</p>
+      <h2 id="footer-heading">Find Me Online or View My Resume</h2>
+    </div>
+    <div class="footer-links">
       {% for button in site.data.footer %}
-      <div class="col">
-        {% if button.name == "GitHub" or button.name == "LinkedIn" %}
-        <a class="d-flex justify-content-center" href="{{ button.link }}" target="_blank" rel="me noopener noreferrer">
-        {% else %}
-        <a class="d-flex justify-content-center" href="{{ button.link }}" target="_blank" rel="noopener noreferrer">
-        {% endif %}
-          <div class="button">
-            {{ button.name }}
-          </div>
-        </a>
-      </div>
+      {% if button.name == "GitHub" or button.name == "LinkedIn" %}
+      <a class="footer-link" href="{{ button.link }}" target="_blank" rel="me noopener noreferrer">
+      {% elsif button.name == "Resume" %}
+      <a class="footer-link" href="{{ button.link | relative_url }}" target="_blank" rel="noopener noreferrer">
+      {% else %}
+      <a class="footer-link" href="{{ button.link }}" target="_blank" rel="noopener noreferrer">
+      {% endif %}
+        <span class="button">{{ button.name }}</span>
+      </a>
       {% endfor %}
     </div>
+    <!--
     <div class="footer_img"></div>
+    -->
   </div>
 </section>

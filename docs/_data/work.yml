@@ -1,37 +1,58 @@
+- company: "MHICO"
+  role: "Technical Co-Founder"
+  years: "03/2026 - 07/2026"
+  location: "Remote"
+  description: >
+    * Served as sole technical co‑founder of mhico.ai, a health insurance guidance website, creating the
+    core architecture, technology, and product decisions that shaped the company from initial&nbsp;concept
+
+    * Maintained the live platform in Django on AWS using Claude Code to accelerate development of features
+    which helped users understand their health insurance and avoid overpaying due to&nbsp;errors
+
+    * Integrated OAuth connections to 30+ payer APIs including Medicare, UnitedHealthcare, Aetna, and Cigna
+    for users to get personalized AI chat assistance, manage claims, and find open enrollment&nbsp;recommendations
+
+    * Utilized Claude via AWS Bedrock for chat and document analysis, applying strict data&nbsp;minimization
+
+    * Deployed on HIPAA&#8209;compliant AWS infrastructure with monitoring/logging, WAF rules, edge&#8209;gated
+    reverse proxy, and a security SDLC with 99.9% uptime across weekly zero&#8209;downtime&nbsp;releases
+
+    * Built privacy-by-design safeguards with a transparent privacy policy, end-to-end
+    encryption, mandatory user MFA, data control for users, consent gates for sensitive data, and automated
+    data retention life&nbsp;cycles
+
+- company: "Various Clients"
+  role: "Freelance Developer"
+  years: "03/2023 - 03/2026"
+  location: "Remote"
+  description: >
+    * Engineered web applications and APIs using Python, Node.js, React, Spring, and OpenAI for clients
+    across data reporting and integration&nbsp;projects
+
+    * Collaborated on Astan, an AI cybersecurity system, by managing the codebase and creating product demos
+    for pitch&nbsp;meetings
+
+    * Preprocessed and analyzed data in Python using scikit&#8209;learn and pandas for an award&#8209;winning
+    data storytelling avatar creation&nbsp;experience
+
+    * Designed EDI file&#8209;conversion pipelines (CSV/XML to JSON) integrated via Liaison Delta for
+    ~20&nbsp;clients
+
 - company: "Hogarth Worldwide"
   role: "Front-End Developer"
-  years: "2021-2022"
+  years: "09/2021 - 12/2022"
+  location: "New York, NY"
   description: >
-    * Created time&#8209;sensitive marketing assets for over 300 campaigns for The Wall Street Journal, Barron’s, and
-    MarketWatch, enhancing engagement with ~4,000,000 current readers and attracting new&nbsp;subscribers
+    * Composed time&#8209;sensitive marketing assets for 300+ campaigns for The Wall Street Journal,
+    MarketWatch, and Barron’s, supporting engagement with ~4,000,000&nbsp;readers
 
-    * Co&#8209;managed [wsjpro.com](https://www.wsjpro.com){:target="_blank" rel="noopener noreferrer"} through WordPress by building PHP modules with
-    JavaScript, improving the user experience for hundreds of premium&nbsp;users
-
-    * Composed shop pages for news subscriptions and bundles sales with JavaScript and Webpack, enhancing all customer interaction and sales with&nbsp;efficiency
-
-    * Created an entire web platform for WSJ Journal House on Splash’s event content management system&nbsp;(CMS)
+    * Developed PHP/JavaScript modules for [wsjpro.com](https://www.wsjpro.com){:target="_blank" rel="noopener noreferrer"} on WordPress for premium users and composed shop pages with
+    JavaScript and Webpack to increase subscriptions and bundles&nbsp;sales
 
 - company: "Syracuse University Division of Marketing and Communications"
   role: "Full-Stack Developer Intern"
-  years: "2020-2021"
+  years: "06/2020 - 05/2021"
+  location: "Syracuse, NY"
   description: >
-    * Managed high&#8209;level software systems for Syracuse University, affecting ~15,000 WordPress&nbsp;sites
-
-    * Developed an API for Centro’s bus data with pandas and Django, allowing efficient implementation and discovery for ~300&nbsp;routes
-
-    * Deployed a multi&#8209;threaded WordPress site management tool through full dev cycle using Django and Ansible
-    Tower API for thousands of site owners to backup, archive, nuke, and more with a single&nbsp;click
-
-- company: "Syracuse University School of Information Studies"
-  role: "Junior Django Developer"
-  years: "2019-2020"
-  description: >
-    * Integrated and troubleshooted complex Django web applications using relational databases, test driven development, PostgreSQL, CI/CD,
-    accessibility, and Kanban&nbsp;development
-
-    * Constructed a web app for university events with an approval system and a JavaScript multi&#8209;view calendar,
-    streamlining event management and&nbsp;scheduling
-
-    * Engineered a form builder with JavaScript to digitize and facilitate college transfer application process,
-    reducing manual paperwork and improving application&nbsp;efficiency
+    * Assisted with upgrading virtual systems through scripts and web applications which affected ~15,000
+    WordPress sites for university branding, faculty, and&nbsp;students

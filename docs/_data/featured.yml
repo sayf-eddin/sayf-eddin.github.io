@@ -1,16 +1,25 @@
-- title: "Centro Bus Schedule GTFS API"
+- title: "MHICO"
   images:
-    - "/assets/images/api_doc.webp"
-    - "/assets/images/SU443_routes.webp"
-    - "/assets/images/bus_api.webp"
+    - "/assets/images/mhico.webp"
+  tags:
+    - "Python"
+    - "AWS"
+    - "Django"
+    - "Claude Code"
+    - "Data Privacy & Security"
+    - "OAuth 2.0"
+    - "HIPAA Compliance"
+    - "AI Integration"
   text: >
-    REST API built in Django for Syracuse University’s Centro [bus&nbsp;schedules](https://www.centro.org/colleges/syracuse-university){:target="_blank" rel="noopener noreferrer"}
+    Health insurance guidance platform built as sole technical co‑founder of [mhico.ai](https://mhico.ai){:target="_blank" rel="noopener noreferrer"}
 
-    * Scripts to pull and read [GTFS data](https://transitfeeds.com/p/central-new-york-rta/524){:target="_blank" rel="noopener noreferrer"} and populate a PostgreSQL database with tables for services, routes, trips, and&nbsp;stops
+    * Built and maintained the live platform in Django on AWS, using Claude Code to accelerate&nbsp;development
 
-    * Endpoints with query parameter filters for all tables and the South Campus bus schedule for&nbsp;today
+    * Integrated OAuth connections to 30+ payer APIs (Medicare, UnitedHealthcare, Aetna, Cigna) for personalized AI chat, claims management, and enrollment&nbsp;recommendations
 
-    * Deployable in Docker container with images for PostgreSQL, MinIO, and&nbsp;Redis
+    * Applied Claude via AWS Bedrock for chat and document analysis with strict data&nbsp;minimization
+
+    * Deployed on HIPAA&#8209;compliant AWS infrastructure with 99.9% uptime, end-to-end encryption, and privacy-by-design&nbsp;safeguards
 
 - title: "Dow Jones Marketing"
   images:
@@ -18,6 +27,15 @@
     - "/assets/images/journal_house.webp"
     - "/assets/images/wsj_store.webp"
     - "/assets/images/wsj_email.webp"
+  tags:
+    - "JavaScript"
+    - "WordPress"
+    - "Marketing Automation"
+    - "HTML5"
+    - "CSS"
+    - "PHP"
+    - "Content Management Systems (CMS)"
+    - "Adobe Photoshop"
   text: >
     Web assets for The Wall Street Journal, MarketWatch, and Barron’s
 

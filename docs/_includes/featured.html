@@ -1,42 +1,37 @@
 <section class="featured" id="featured" aria-labelledby="featured-heading">
-  <div class="text-center">
-    <h3 id="featured-heading"><span class="diamond" aria-hidden="true">◇</span> Featured Work <span class="diamond" aria-hidden="true">◇</span></h3>
-  </div>
   <div class="container">
-    {% for project in site.data.featured %}
-    <div class="project row align-items-center justify-content-around">
-      {% assign align = forloop.index | modulo:2 %}
-      {% if align == 1 %}
-      <div class="col-6 no-tablet">
-        <h4>{{ project.title }}</h4>
-        {{ project.text | markdownify }}
-      </div>
-      {% endif %}
-      <div class="col tablet">
-        <h4>{{ project.title }}</h4>
-        {{ project.text | markdownify }}
-      </div>
-      <div class="col carousel-col">
-        <div class="carousel" aria-roledescription="carousel" aria-label="{{ project.title }} screenshots">
-          {% for image in project.images %}
-          <div class="carousel-cell">
-            <a href="{{ image }}" target="_blank" rel="noopener noreferrer">
-              <img src="{{ image }}" alt="{{ project.title }} screenshot {{ forloop.index }}" width="800" height="600" loading="lazy">
-            </a>
-          </div>
-          {% endfor %}
-        </div>
-        <button type="button" class="carousel-pause" aria-pressed="false" aria-label="Pause {{ project.title }} slideshow">
-          <span class="carousel-pause-icon" aria-hidden="true">&#10074;&#10074;</span>
-        </button>
-      </div>
-      {% if align == 0 %}
-      <div class="col-6 no-tablet">
-        <h4>{{ project.title }}</h4>
-        {{ project.text | markdownify }}
-      </div>
-      {% endif %}
+    <div class="section-head reveal">
+      <p class="section-kicker">01 &middot; Selected Work</p>
+      <h2 id="featured-heading">Featured Projects</h2>
     </div>
-    {% endfor %}
+    <div class="project-grid">
+      {% for project in site.data.featured %}
+      <article class="project-card reveal">
+        <a class="project-cover" href="{{ project.images[0] }}" target="_blank" rel="noopener noreferrer">
+          <img src="{{ project.images[0] }}" alt="{{ project.title }} screenshot" width="800" height="600" loading="lazy">
+        </a>
+        <div class="project-body">
+          <h3>{{ project.title }}</h3>
+          {{ project.text | markdownify }}
+          {% if project.tags %}
+          <ul class="tag-list">
+            {% for tag in project.tags %}
+            <li class="tag">{{ tag }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          {% if project.images.size > 1 %}
+          <div class="project-gallery" aria-label="More {{ project.title }} screenshots">
+            {% for image in project.images offset: 1 %}
+            <a class="project-thumb" href="{{ image }}" target="_blank" rel="noopener noreferrer">
+              <img src="{{ image }}" alt="{{ project.title }} screenshot {{ forloop.index | plus: 1 }}" width="240" height="180" loading="lazy">
+            </a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
   </div>
 </section>

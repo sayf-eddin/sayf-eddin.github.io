@@ -1,13 +1,67 @@
 ---
 ---
 
+// Variable font: one file covers the full 100-900 weight range, so bold
+// text (headings, nav, buttons) renders with a real bold instead of the
+// browser's synthetic/faux bold.
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: 'Inter';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100 900;
   font-display: swap;
-  src: url("{{ '/assets/fonts/source-sans-pro-latin-400.woff2' | relative_url }}") format('woff2');
+  src: url("{{ '/assets/fonts/inter-latin-variable.woff2' | relative_url }}") format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+// Used sparingly for kicker labels and project tags — a monospace accent
+// that nods to the site being a developer's portfolio without taking over
+// body copy or headings.
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("{{ '/assets/fonts/jetbrains-mono-latin-500.woff2' | relative_url }}") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+// ------------------------------------------------------------------
+// Palette — dark-mode-first. The site ships dark by default and only
+// switches to the light variant when the OS/browser asks for it, so
+// :root always holds the dark values and the light query overrides them.
+// ------------------------------------------------------------------
+:root {
+  color-scheme: dark;
+
+  --bg: #0b0a17;
+  --bg-soft: #121129;
+  --surface: #171531;
+  --surface-2: #1f1c3d;
+  --border: #2c2853;
+  --text: #f1eefb;
+  --text-muted: #b3aed1;
+  --accent: #a48cff;
+  --accent-strong: #c3b0ff;
+  --accent-contrast: #0b0a17;
+  --shadow: rgba(5, 2, 20, 0.55);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+
+    --bg: #faf9ff;
+    --bg-soft: #f2f0fb;
+    --surface: #ffffff;
+    --surface-2: #f1effa;
+    --border: #e3defa;
+    --text: #17152c;
+    --text-muted: #5b5678;
+    --accent: #6c4fd8;
+    --accent-strong: #5238b8;
+    --accent-contrast: #ffffff;
+    --shadow: rgba(40, 25, 90, 0.12);
+  }
 }
 
 html {
@@ -21,7 +75,7 @@ html {
 }
 
 body {
-  background-color: white;
+  background-color: var(--bg);
   font-size: 1.2rem;
 }
 
@@ -32,6 +86,51 @@ body {
 // each component's width/max-width + aspect-ratio rules size the image.
 img {
   height: auto;
+  display: block;
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+// ------------------------------------------------------------------
+// Utilities (previously provided by Bootstrap)
+// ------------------------------------------------------------------
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 52rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  box-sizing: border-box;
+
+  @media (max-width: 1000px) {
+    max-width: 48rem;
+  }
+  @media (max-width: 850px) {
+    max-width: 100%;
+  }
 }
 
 .skip-link {
@@ -39,15 +138,15 @@ img {
   top: -3.5rem;
   left: 0.5rem;
   z-index: 2000;
-  background-color: #050050;
-  color: white;
+  background-color: var(--accent);
+  color: var(--accent-contrast);
   padding: 0.6rem 1rem;
   border-radius: 0 0 0.4rem 0.4rem;
   transition: top 0.2s ease;
 
   &:focus {
     top: 0;
-    color: white;
+    color: var(--accent-contrast);
   }
 }
 
@@ -55,28 +154,21 @@ img {
   padding: 8rem 1rem 4rem;
 }
 
-#about, #featured, #work, #education, #footer {
-  scroll-margin-top: 4rem;
+#featured, #work, #about, #education, #footer {
+  scroll-margin-top: 4.5rem;
 }
 
-$font_color: black;
-$dark_blue: #050050;
-$blue: #847bce;
-$light_blue: #e6e5f7;
-
-* {
-  font-family: 'Source Sans Pro', sans-serif;
-  color: $font_color;
-}
-
+// ------------------------------------------------------------------
+// Type & base elements
+// ------------------------------------------------------------------
 a {
-  color: $font_color;
+  color: var(--text);
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 600;
 
   &:hover {
-    color: $dark_blue;
+    color: var(--accent);
     transition: 0.4s;
     text-decoration: underline;
   }
@@ -86,82 +178,44 @@ a {
 // hover, so they're distinguishable from surrounding bold text.
 p a, li a {
   text-decoration: underline;
+  text-decoration-color: var(--accent);
 }
 
-.footer a {
-  color: $font_color;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin: 0.5rem 0.8rem;
-
-  &:hover {
-    color: white;
-    transition: 0.4s;
-    text-decoration: none;
-  }
-
-  .button:hover {
-    color: white;
-    transition: 0.4s;
-  }
-}
-
-.button {
-  border: 0.2rem solid $blue;
-  border-radius: 0.4rem;
-  padding: 0.6rem;
-  width: 100%;
-
-  &:hover {
-    background-color: $blue;
-    transition: 0.4s;
-  }
-}
-
-.tablet {
-  display: none;
-}
-
-@media (max-width: 850px) {
-  .no-tablet {
-    display: none;
-  }
-
-  .tablet {
-    display: block;
-  }
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
 }
 
 h1 {
   // calc() keeps old libsass (used by the github-pages gem) from trying to
   // evaluate rem + vw itself, which fails since it can't mix those units.
-  font-size: clamp(2.1rem, calc(1.81rem + 1.43vw), 2.5rem);
+  font-size: clamp(2.6rem, calc(2.1rem + 2.2vw), 3.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: clamp(1.7rem, calc(1.49rem + 1.07vw), 2rem);
+  font-size: clamp(1.9rem, calc(1.6rem + 1.3vw), 2.4rem);
+  letter-spacing: -0.01em;
 }
 
 h3 {
-  font-size: 1.7rem;
-  padding-bottom: 1.7rem;
+  font-size: 1.5rem;
 }
 
 h4 {
-  font-size: 1.5rem;
-  padding-bottom: 0.7rem;
+  font-size: 1.3rem;
   margin-bottom: 0.3rem;
 }
 
 h5 {
-  font-size: 1.35rem;
+  font-size: 1.1rem;
   margin-bottom: 0.3rem;
 }
 
 p {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  color: var(--text-muted);
 }
 
 ul {
@@ -170,250 +224,520 @@ ul {
 
 li {
   padding-bottom: 0.5rem;
+  color: var(--text-muted);
 }
 
-.bg-dark {
-  background-color: $dark_blue !important;
+// ------------------------------------------------------------------
+// Scroll-reveal — belt-and-suspenders with the JS observer: the media
+// query guarantees no motion at all for reduced-motion users even if
+// JS fails to load.
+// ------------------------------------------------------------------
+.reveal {
+  opacity: 0;
+  transform: translateY(1.2rem);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.container {
-  max-width: 52rem;
-
-  @media (max-width: 1000px) {
-    max-width: 48rem;
-  } 
-  @media (max-width: 850px) {
-    max-width: 80%;
-  }    
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.nav-item .nav-link {
-  color: white !important;
-  margin-bottom: 0;
-  padding-left: 4rem !important;
-  padding-right: 4rem !important;
-
-  @media (max-width: 930px) {
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-  }
-
-  @media (max-width: 576px) {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
-.nav-item .nav-link:hover,
-.nav-item .nav-link:focus {
-  cursor: pointer;
-  color: $light_blue !important;
-  transition: all 0.2s ease;
-  text-decoration: underline;
-}
-
-.nav-item .nav-link[aria-current="location"] {
-  color: $light_blue !important;
-  text-decoration: underline;
-}
-
-.navbar-toggler {
-  margin-left: 1rem !important;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.hero {
-  background-image: linear-gradient($dark_blue, white);
-  padding-bottom: 3rem;
-  border-bottom: 0.2rem solid $light_blue;
-}
-
-.hero-content {
-  padding-top: 7rem;
-
-  @media (max-width: 576px) {
-    padding-top: 5rem;
-  }
-}
-
-.hero img {
-  margin: 1.5rem auto;
-  width: 26rem;
-  aspect-ratio: 1 / 1;
-  opacity: 0.9;
-  border: 0.5rem solid rgb(0, 0, 0);
-
-  @media (max-width: 576px) {
-    width: 20rem;
-  }
-
-  @media (max-width: 400px) {
-    width: 15rem;
-  }
-}
-
-@mixin section($bg: white) {
-  background-color: $bg;
-  padding-top: 3.5rem;
-  padding-bottom: 3rem;
-}
-
-.about {
-  @include section;
-}
-
-.about p {
-  padding-bottom: 1.5rem;
-}
-
-.featured {
-  @include section($bg: $light_blue);
-}
-
-.featured .container {
-  max-width: 61rem;
-
-  @media (max-width: 1000px) {
-    max-width: 50rem;
-  }
-
-  @media (max-width: 850px) {
-    max-width: 82%;
-  }
-}
-
-.carousel-col {
-  position: relative;
-  margin: 0 2rem;
-  padding-bottom: 1.5rem;
-}
-
-.carousel-pause {
-  position: absolute;
+// ------------------------------------------------------------------
+// Nav
+// ------------------------------------------------------------------
+.nav {
+  position: fixed;
   top: 0;
+  left: 0;
   right: 0;
-  z-index: 2;
-  background-color: rgba(255, 255, 255, 0.85);
-  border: 0.1rem solid $blue;
-  border-radius: 0.3rem;
-  padding: 0.3rem 0.5rem;
-  line-height: 1;
+  z-index: 1000;
+  background-color: transparent;
+  border-bottom: 0.1rem solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav.is-scrolled {
+  background-color: var(--bg);
+  border-bottom-color: var(--border);
+  box-shadow: 0 1rem 2rem -1.4rem var(--shadow);
+}
+
+.nav-inner {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.1rem;
+}
+
+.nav-brand {
+  font-size: 1.15rem;
+  font-weight: 700;
+  white-space: nowrap;
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  &[aria-current="location"] {
+    color: var(--accent);
+  }
+}
+
+.nav-resume {
+  border: 0.13rem solid var(--accent);
+  border-radius: 0.5rem;
+  padding: 0.4rem 1rem;
+  color: var(--accent);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--accent);
+    color: var(--accent-contrast);
+  }
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.32rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: transparent;
+  border: 0.1rem solid var(--border);
+  border-radius: 0.4rem;
   cursor: pointer;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 1.3rem;
+  height: 0.14rem;
+  margin-inline: auto;
+  background-color: var(--text);
+  border-radius: 0.1rem;
+}
+
+@media (max-width: 800px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background-color: var(--bg);
+    border-bottom: 0.1rem solid var(--border);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-menu.is-open {
+    max-height: 24rem;
+  }
+
+  .nav-link, .nav-resume {
+    padding: 1rem 1.5rem;
+    border-radius: 0;
+    border: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav-resume {
+    border-top: 0.1rem solid var(--border);
+  }
+}
+
+// ------------------------------------------------------------------
+// Hero
+// ------------------------------------------------------------------
+.hero {
+  background: radial-gradient(120% 100% at 85% 0%, var(--bg-soft) 0%, var(--bg) 60%);
+  padding-bottom: 5rem;
+  border-bottom: 0.1rem solid var(--border);
+}
+
+// padding-top lives here (not on .hero) because the nav is a child of .hero:
+// nav is fixed and escapes normal flow, so this is what actually clears it.
+.hero-content {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  padding-top: 8rem;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 3rem;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  @media (max-width: 576px) {
+    padding-top: 6rem;
+  }
+}
+
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent);
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.6rem;
+}
+
+.hero-title {
+  margin-bottom: 0.8rem;
+}
+
+.hero-tagline {
+  max-width: 34rem;
+  font-size: 1.3rem;
+  color: var(--text-muted);
+
+  @media (max-width: 800px) {
+    max-width: none;
+    margin-inline: auto;
+  }
+}
+
+.hero-photo {
+  justify-self: end;
+
+  @media (max-width: 800px) {
+    justify-self: center;
+  }
+}
+
+.hero-photo img {
+  width: 22rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  border: 0.1rem solid var(--border);
+  box-shadow: 0 2rem 4rem -1.5rem var(--shadow);
+
+  @media (max-width: 576px) {
+    width: 16rem;
+  }
+}
+
+// ------------------------------------------------------------------
+// Section heading pattern (replaces the old ◇ dividers)
+// ------------------------------------------------------------------
+@mixin section($bg: var(--bg)) {
+  background-color: $bg;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.section-head {
+  margin-bottom: 2.5rem;
+}
+
+.section-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.4rem;
+}
+
+// ------------------------------------------------------------------
+// Featured work — responsive card grid
+// ------------------------------------------------------------------
+.featured {
+  @include section($bg: var(--bg-soft));
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  // Screenshots are 800x600 source images — capping the card keeps them at
+  // a crisp thumbnail size instead of stretching across a whole grid track,
+  // which is especially wide when there's only one card in the row.
+  max-width: 24rem;
+  margin-inline: auto;
+  width: 100%;
+  background-color: var(--surface);
+  border: 0.1rem solid var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover, &:focus-within {
+      transform: translateY(-0.3rem);
+      border-color: var(--accent);
+      box-shadow: 0 1.6rem 3rem -1.6rem var(--shadow);
+    }
+  }
+}
+
+.project-cover {
+  display: block;
+
+  img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+}
+
+.project-body {
+  padding: 1.6rem 1.6rem 1.8rem;
+}
+
+.project-body p:last-of-type {
+  margin-bottom: 1rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 1.2rem;
+}
+
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: var(--surface-2);
+  border: 0.06rem solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 100vw;
+  padding: 0.3rem 0.8rem;
+}
+
+.project-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.project-thumb {
+  width: 4.6rem;
+  height: 3.5rem;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  border: 0.08rem solid var(--border);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   &:hover, &:focus-visible {
-    background-color: $blue;
-    color: white;
-    transition: 0.4s;
+    border-color: var(--accent);
   }
 }
 
-.carousel-pause-icon {
-  font-size: 0.8rem;
-}
-
-@media (max-width: 850px) {
-  .featured {
-    .row {
-      display: block;
-    }
-
-    .col {
-      text-align: center;
-      margin: 0 auto;
-    }
-
-    ul {
-      text-align: left !important;
-    }
-
-    .carousel-col {
-      padding-bottom: 2.5rem;
-    }
-  }
-}
-
-.carousel {
-  width: 100%;
-
-  .flickity-button {
-    background: transparent;
-  }
-
-  .flickity-prev-next-button {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .flickity-prev-next-button.previous {
-    left: -1.8rem;
-  }
-
-  .flickity-prev-next-button.next {
-    right: -1.8rem;
-  }
-
-  .flickity-button-icon {
-    fill: black;
-  }
-
-  .flickity-page-dots {
-    bottom: -1.2rem;
-  }
-
-
-  .flickity-page-dots .dot.is-selected {
-    background: black;
-  }
-}
-
-.carousel-cell {
-  width: 100%;
-}
-
-.project img {
-  max-width: 100%;
-  aspect-ratio: 4 / 3;
-}
-
-.project {
-  padding-top: 1.7rem;
-  padding-bottom: 1.7rem;
-}
-
+// ------------------------------------------------------------------
+// Work history — timeline
+// ------------------------------------------------------------------
 .work {
   @include section;
 }
 
-.job {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.timeline {
+  position: relative;
+  padding-left: 2rem;
 
-  .desc {
-    padding-top: 0.5rem;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    left: 0.28rem;
+    width: 0.14rem;
+    background-color: var(--border);
   }
 }
 
-.education {
-  @include section($bg: $light_blue);
-  text-align: center;
+.timeline-item {
+  position: relative;
+  padding-bottom: 2.6rem;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
 }
 
-.education img {
+.timeline-marker {
+  position: absolute;
+  top: 0.35rem;
+  left: -2rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+  box-shadow: 0 0 0 0.3rem var(--bg-soft);
+}
+
+.timeline-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.timeline-years {
+  color: var(--text-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.timeline-company {
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.timeline-location {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.timeline-content .desc {
+  padding-top: 0.3rem;
+}
+
+@media (max-width: 576px) {
+  .timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-marker {
+    left: -1.5rem;
+  }
+}
+
+// ------------------------------------------------------------------
+// About
+// ------------------------------------------------------------------
+.about {
+  @include section($bg: var(--bg-soft));
+}
+
+.about-text p {
+  padding-bottom: 1.5rem;
+  max-width: 46rem;
+}
+
+// ------------------------------------------------------------------
+// Education
+// ------------------------------------------------------------------
+.education {
+  @include section;
+}
+
+.education-card img {
   max-width: 15rem;
   aspect-ratio: 8 / 3;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  border-radius: 0.5rem;
 }
 
+// ------------------------------------------------------------------
+// Footer
+// ------------------------------------------------------------------
 .footer {
-  @include section;
+  @include section($bg: var(--bg-soft));
   text-align: center;
-  padding-bottom: 1rem !important;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  border-top: 0.1rem solid var(--border);
 }
 
-.footer .col {
-  flex: 0 0 auto;
-  width: 11rem; 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.footer-link {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: none;
+
+    .button {
+      background-color: var(--accent);
+      color: var(--accent-contrast);
+      transition: 0.3s;
+    }
+  }
+}
+
+.button {
+  display: block;
+  border: 0.13rem solid var(--accent);
+  border-radius: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  min-width: 9rem;
 }
 
 .footer_img {

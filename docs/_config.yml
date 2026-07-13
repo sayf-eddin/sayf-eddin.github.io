@@ -4,7 +4,7 @@
 
 title: Sayf Eddin Ahmed
 description: >-
-  Pursuing my goals to give to society through technology.
+  Scaling production systems end-to-end: modern architecture, secure integrations, cloud deployment.
 baseurl: ""
 url: "https://sayf-eddin.me"
 
@@ -19,6 +19,8 @@ plugins:
 
 images:
   favicon: "/assets/images/favicon.ico"
+  favicon_png: "/assets/images/favicon-32.png"
+  apple_touch_icon: "/assets/images/apple-touch-icon.png"
   hero: "/assets/images/profile.webp"
   seo: "/assets/images/seo.jpg"
   education: "/assets/images/syracuse.webp"

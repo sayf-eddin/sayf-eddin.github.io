@@ -1,17 +1,27 @@
 <section class="work" id="work" aria-labelledby="work-heading">
-  <div class="text-center">
-    <h3 id="work-heading"><span class="diamond" aria-hidden="true">◇</span> Work History <span class="diamond" aria-hidden="true">◇</span></h3>
-  </div>
   <div class="container">
-    {% for job in site.data.work %}
-    <div class="job">
-      <h4>{{ job.role }}</h4>
-      <h5>{{ job.company }}</h5>
-      <h5>{{ job.years }}</h5>
-      <div class="desc">
-        {{ job.description | markdownify }}
-      </div>
+    <div class="section-head reveal">
+      <p class="section-kicker">02 &middot; Experience</p>
+      <h2 id="work-heading">Work History</h2>
     </div>
-    {% endfor %}
+    <div class="timeline">
+      {% for job in site.data.work %}
+      <article class="timeline-item reveal">
+        <div class="timeline-marker" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <div class="timeline-heading">
+            <h3>{{ job.role }}</h3>
+            <p class="timeline-years">{{ job.years }}</p>
+          </div>
+          <p class="timeline-company">
+            {{ job.company }}{% if job.location %} <span class="timeline-location">&middot; {{ job.location }}</span>{% endif %}
+          </p>
+          <div class="desc">
+            {{ job.description | markdownify }}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
   </div>
 </section>

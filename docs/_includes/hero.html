@@ -1,34 +1,36 @@
+{% assign resume = site.data.footer | where: "name", "Resume" | first %}
 <header class="hero" id="hero">
-  <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+  <nav class="nav" id="site-nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#hero">Sayf Eddin Ahmed</a>
+
+      <button class="nav-toggle" type="button" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
       </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="nav navbar-nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About Me</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#featured">Featured</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#work">Experience</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#education">Education</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#footer">Links</a>
-          </li>
-        </ul>
+
+      <div class="nav-menu" id="nav-menu">
+        <a class="nav-link" href="#featured">Work</a>
+        <a class="nav-link" href="#work">Experience</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#education">Education</a>
+        <a class="nav-link" href="#footer">Links</a>
+        {% if resume %}
+        <a class="nav-link nav-resume" href="{{ resume.link | relative_url }}" target="_blank" rel="noopener noreferrer">Resume</a>
+        {% endif %}
       </div>
     </div>
   </nav>
 
-  <div class="hero-content text-center">
-    <img src="{{ site.images.hero }}" alt="A picture of me" class="rounded" width="800" height="800">
-    <h1>Sayf Eddin Ahmed</h1>
-    <h2>Software Developer</h2>
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Product Engineer</p>
+      <h1 class="hero-title">Sayf Eddin Ahmed</h1>
+      <p class="hero-tagline">{{ site.description }}</p>
+    </div>
+    <div class="hero-photo">
+      <img src="{{ site.images.hero }}" alt="A picture of me" width="800" height="800">
+    </div>
   </div>
 </header>

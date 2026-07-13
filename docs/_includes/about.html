@@ -1,10 +1,13 @@
 <section class="about" id="about" aria-labelledby="about-heading">
-  <div class="text-center">
-    <h3 id="about-heading"><span class="diamond" aria-hidden="true">◇</span> About Me <span class="diamond" aria-hidden="true">◇</span></h3>
-  </div>
   <div class="container">
-    {% for text in site.data.about %}
-    {{ text | markdownify }}
-    {% endfor %}
+    <div class="section-head reveal">
+      <p class="section-kicker">03 &middot; Profile</p>
+      <h2 id="about-heading">About Me</h2>
+    </div>
+    <div class="about-text reveal">
+      {% for text in site.data.about %}
+      {{ text | markdownify }}
+      {% endfor %}
+    </div>
   </div>
 </section>

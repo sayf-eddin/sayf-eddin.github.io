@@ -1,55 +1,31 @@
 var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Carousels: disable autoplay entirely for reduced-motion users, otherwise
-// wire up a pause/play toggle so autoplay can be stopped (WCAG 2.2.2).
-var carousels = document.querySelectorAll('.carousel');
-for (var i = 0, len = carousels.length; i < len; i++) {
-  var elem = carousels[i];
-  var flkty = new Flickity(elem, {
-    cellAlign: 'left',
-    contain: true,
-    wrapAround: true,
-    autoPlay: reduceMotion ? false : 7000,
-    dragThreshold: 10,
-    arrowShape: {
-      x0: 10,
-      x1: 60, y1: 50,
-      x2: 60, y2: 50,
-      x3: 60
-    }
+// Mobile nav: toggle the menu panel and mirror state to aria-expanded.
+var navToggle = document.getElementById('nav-toggle');
+var navMenu = document.getElementById('nav-menu');
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', function () {
+    var isOpen = navMenu.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
   });
 
-  var pauseButton = elem.parentElement.querySelector('.carousel-pause');
-  if (!pauseButton) {
-    continue;
+  var navLinksInMenu = navMenu.querySelectorAll('.nav-link');
+  for (var n = 0, nLen = navLinksInMenu.length; n < nLen; n++) {
+    navLinksInMenu[n].addEventListener('click', function () {
+      navMenu.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
   }
+}
 
-  if (reduceMotion) {
-    pauseButton.hidden = true;
-    continue;
-  }
-
-  var icon = pauseButton.querySelector('.carousel-pause-icon');
-  var baseLabel = pauseButton.getAttribute('aria-label');
-  var playLabel = baseLabel.replace('Pause', 'Play');
-  var isPaused = false;
-
-  pauseButton.addEventListener('click', function (flkty, icon, pauseButtonEl) {
-    return function () {
-      isPaused = !isPaused;
-      if (isPaused) {
-        flkty.pausePlayer();
-        icon.textContent = '▶';
-        pauseButtonEl.setAttribute('aria-pressed', 'true');
-        pauseButtonEl.setAttribute('aria-label', playLabel);
-      } else {
-        flkty.unpausePlayer();
-        icon.textContent = '❚❚';
-        pauseButtonEl.setAttribute('aria-pressed', 'false');
-        pauseButtonEl.setAttribute('aria-label', baseLabel);
-      }
-    };
-  }(flkty, icon, pauseButton));
+// Nav switches from transparent (over the hero) to a solid bar once scrolled.
+var siteNav = document.getElementById('site-nav');
+if (siteNav) {
+  var updateNavScrolled = function () {
+    siteNav.classList.toggle('is-scrolled', window.scrollY > 40);
+  };
+  updateNavScrolled();
+  window.addEventListener('scroll', updateNavScrolled, { passive: true });
 }
 
 // Flag links that open in a new tab (and PDFs) for assistive tech, since the
@@ -89,4 +65,23 @@ if (sections.length && 'IntersectionObserver' in window) {
   }, { rootMargin: '-40% 0px -55% 0px' });
 
   sections.forEach(function (s) { observer.observe(s.section); });
+}
+
+// Fade/slide sections and cards into place as they enter the viewport.
+// Reduced-motion users (and browsers without IntersectionObserver) just see
+// everything visible immediately, no animation.
+var revealTargets = document.querySelectorAll('.reveal');
+if (reduceMotion || !('IntersectionObserver' in window)) {
+  revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
+} else {
+  var revealObserver = new IntersectionObserver(function (entries, obs) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+
+  revealTargets.forEach(function (el) { revealObserver.observe(el); });
 }
