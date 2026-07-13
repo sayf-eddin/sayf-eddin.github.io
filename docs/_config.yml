@@ -14,8 +14,11 @@ url: "https://sayf-eddin.me"
 theme: null
 
 # jekyll-feed provides the {% feed_meta %} tag used in _includes/head.html.
+# jekyll-sitemap auto-generates /sitemap.xml so search engines can discover
+# every page without it being wired up by hand.
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 images:
   favicon: "/assets/images/favicon.ico"

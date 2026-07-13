@@ -89,6 +89,10 @@ img {
   display: block;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 * {
   font-family: 'Inter', sans-serif;
   color: var(--text);
@@ -497,7 +501,10 @@ li {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  // min(19rem, 100%) keeps the grid from forcing a column wider than the
+  // viewport on narrow phones — plain minmax(19rem, 1fr) overflows once the
+  // container's padding eats into anything under ~360px wide.
+  grid-template-columns: repeat(auto-fit, minmax(min(19rem, 100%), 1fr));
   gap: 2rem;
 }
 
@@ -740,17 +747,19 @@ li {
   min-width: 9rem;
 }
 
-.footer_img {
-  max-width: 3rem;
-  padding-top: 5rem;
-  margin: 4rem auto 0.5rem;
-  background-image: url("/assets/images/link.webp");
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  &:hover {
-    background-image: url("/assets/images/link_psy.webp");
-    margin-top: 1rem;
-    padding-top: 9rem;
-  }
-}
+// Unused: the .footer_img div in footer.html is commented out. Kept here in
+// case it comes back; images live in assets/images/_unused/.
+// .footer_img {
+//   max-width: 3rem;
+//   padding-top: 5rem;
+//   margin: 4rem auto 0.5rem;
+//   background-image: url("/assets/images/_unused/link.webp");
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//
+//   &:hover {
+//     background-image: url("/assets/images/_unused/link_psy.webp");
+//     margin-top: 1rem;
+//     padding-top: 9rem;
+//   }
+// }
