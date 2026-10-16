@@ -13,11 +13,9 @@ url: "https://sayf-eddin.me"
 # falls back to jekyll-theme-primer and leaks its unused assets into the build.
 theme: null
 
-# jekyll-feed provides the {% feed_meta %} tag used in _includes/head.html.
 # jekyll-sitemap auto-generates /sitemap.xml so search engines can discover
 # every page without it being wired up by hand.
 plugins:
-  - jekyll-feed
   - jekyll-sitemap
 
 images:

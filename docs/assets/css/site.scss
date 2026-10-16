@@ -170,10 +170,10 @@ a {
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 600;
+  transition: color 0.4s, background-color 0.4s;
 
   &:hover {
     color: var(--accent);
-    transition: 0.4s;
     text-decoration: underline;
   }
 }
@@ -293,6 +293,7 @@ li {
 
   &:hover {
     color: var(--accent);
+    text-decoration: none;
   }
 }
 
@@ -352,6 +353,24 @@ li {
   margin-inline: auto;
   background-color: var(--text);
   border-radius: 0.1rem;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+}
+
+// Morph the three bars into an X while the menu is open. 0.46rem is the bar
+// gap plus bar height, which lines the outer bars up on the middle one.
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar {
+  &:nth-child(1) {
+    transform: translateY(0.46rem) rotate(45deg);
+  }
+  &:nth-child(2) {
+    opacity: 0;
+  }
+  &:nth-child(3) {
+    transform: translateY(-0.46rem) rotate(-45deg);
+  }
 }
 
 @media (max-width: 800px) {
@@ -371,11 +390,16 @@ li {
     border-bottom: 0.1rem solid var(--border);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    // visibility keeps the collapsed links out of the tab order; its delay
+    // lets the closing slide finish before they disappear.
+    visibility: hidden;
+    transition: max-height 0.3s ease, visibility 0s linear 0.3s;
   }
 
   .nav-menu.is-open {
     max-height: 24rem;
+    visibility: visible;
+    transition: max-height 0.3s ease;
   }
 
   .nav-link, .nav-resume {
@@ -445,6 +469,65 @@ li {
   @media (max-width: 800px) {
     max-width: none;
     margin-inline: auto;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
+}
+
+.hero-cta {
+  display: inline-block;
+  font-size: 1.05rem;
+  padding: 0.75rem 1.5rem;
+  border: 0.13rem solid var(--accent);
+  border-radius: 0.5rem;
+  color: var(--accent);
+  transition: color 0.4s, background-color 0.4s, border-color 0.4s;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--accent);
+    color: var(--accent-contrast);
+    text-decoration: none;
+  }
+}
+
+.hero-cta-primary {
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--accent-strong);
+    border-color: var(--accent-strong);
+  }
+}
+
+// Above the fold, so the scroll-reveal observer would fire instantly — a
+// load-in animation gives the hero the same entrance feel instead.
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.2rem);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-text,
+  .hero-photo {
+    animation: rise-in 0.7s ease both;
+  }
+
+  .hero-photo {
+    animation-delay: 0.15s;
   }
 }
 
@@ -519,7 +602,9 @@ li {
   border: 0.1rem solid var(--border);
   border-radius: 1rem;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  // Overrides .reveal's transition, so opacity must be listed here too or the
+  // card pops in instead of fading.
+  transition: opacity 0.6s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 
   @media (prefers-reduced-motion: no-preference) {
     &:hover, &:focus-within {
@@ -593,6 +678,122 @@ li {
 }
 
 // ------------------------------------------------------------------
+// Screenshot lightbox (built by site.js). The dialog fills the viewport
+// so clicks on the dimmed area outside the image can close it. Colors are
+// fixed rather than themed since it always sits on a dark backdrop.
+// ------------------------------------------------------------------
+.has-lightbox {
+  overflow: hidden;
+}
+
+.lightbox {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 4rem 5rem;
+  border: 0;
+  background: transparent;
+
+  &[open] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &::backdrop {
+    background-color: rgba(5, 3, 15, 0.88);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &[open] {
+      animation: lightbox-in 0.25s ease;
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 4rem 1rem 5.5rem;
+  }
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 0.75rem;
+  box-shadow: 0 2rem 4rem -1rem rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-btn {
+  position: absolute;
+  width: 2.8rem;
+  height: 2.8rem;
+  padding: 0;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 0.08rem solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-contrast);
+  }
+}
+
+.lightbox-close {
+  top: 1rem;
+  right: 1rem;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+
+  // On phones the image spans the full width, so the arrows move down
+  // beside the counter instead of covering its edges.
+  @media (max-width: 576px) {
+    top: auto;
+    bottom: 1.2rem;
+    transform: none;
+  }
+}
+
+.lightbox-prev {
+  left: 1rem;
+}
+
+.lightbox-next {
+  right: 1rem;
+}
+
+.lightbox-count {
+  position: absolute;
+  bottom: 1.6rem;
+  left: 0;
+  right: 0;
+  margin: 0;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+// ------------------------------------------------------------------
 // Work history — timeline
 // ------------------------------------------------------------------
 .work {
@@ -631,7 +832,7 @@ li {
   height: 0.7rem;
   border-radius: 50%;
   background-color: var(--accent);
-  box-shadow: 0 0 0 0.3rem var(--bg-soft);
+  box-shadow: 0 0 0 0.3rem var(--bg);
 }
 
 .timeline-heading {
@@ -728,13 +929,12 @@ li {
   font-size: 1.1rem;
   font-weight: 600;
 
-  &:hover {
+  &:hover, &:focus-visible {
     text-decoration: none;
 
     .button {
       background-color: var(--accent);
       color: var(--accent-contrast);
-      transition: 0.3s;
     }
   }
 }
@@ -745,6 +945,30 @@ li {
   border-radius: 0.5rem;
   padding: 0.7rem 1.4rem;
   min-width: 9rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+// ------------------------------------------------------------------
+// Print / save as PDF: anything not yet scrolled past would still be
+// at opacity 0, and the fixed nav would stamp itself over the page.
+// ------------------------------------------------------------------
+@media print {
+  .nav, .skip-link {
+    display: none;
+  }
+
+  .hero-content {
+    padding-top: 2rem;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-text, .hero-photo {
+    animation: none;
+  }
 }
 
 // Unused: the .footer_img div in footer.html is commented out. Kept here in

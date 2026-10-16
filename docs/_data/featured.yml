@@ -13,13 +13,11 @@
   text: >
     Health insurance guidance platform built as sole technical co‑founder of [mhico.ai](https://mhico.ai){:target="_blank" rel="noopener noreferrer"}
 
-    * Built and maintained the live platform in Django on AWS, using Claude Code to accelerate&nbsp;development
+    * Personalized AI chat that helps users understand their coverage and avoid overpaying due to&nbsp;errors
 
-    * Integrated OAuth connections to 30+ payer APIs (Medicare, UnitedHealthcare, Aetna, Cigna) for personalized AI chat, claims management, and enrollment&nbsp;recommendations
+    * Connects to 30+ payer APIs (Medicare, UnitedHealthcare, Aetna, Cigna) so users can manage claims and get open&#8209;enrollment&nbsp;recommendations
 
-    * Applied Claude via AWS Bedrock for chat and document analysis with strict data&nbsp;minimization
-
-    * Deployed on HIPAA&#8209;compliant AWS infrastructure with 99.9% uptime, end-to-end encryption, and privacy-by-design&nbsp;safeguards
+    * Users stay in control of their data with mandatory MFA, consent gates for sensitive data, and end&#8209;to&#8209;end&nbsp;encryption
 
 - title: "Dow Jones Marketing"
   images:

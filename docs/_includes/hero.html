@@ -28,6 +28,12 @@
       <p class="hero-eyebrow">Product Engineer</p>
       <h1 class="hero-title">Sayf Eddin Ahmed</h1>
       <p class="hero-tagline">{{ site.description }}</p>
+      <div class="hero-actions">
+        <a class="hero-cta hero-cta-primary" href="#featured">View my work</a>
+        {% if resume %}
+        <a class="hero-cta" href="{{ resume.link | relative_url }}" target="_blank" rel="noopener noreferrer">Resume</a>
+        {% endif %}
+      </div>
     </div>
     <div class="hero-photo">
       <img src="{{ site.images.hero }}" alt="Portrait of Sayf" width="800" height="800">

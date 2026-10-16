@@ -35,7 +35,6 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
-  {% feed_meta %}
 
   <!-- Without JS: the scroll-reveal observer never runs, so force reveal
        content visible instead of stuck at opacity: 0. The mobile nav toggle
@@ -47,7 +46,7 @@
       .nav-toggle { display: none !important; }
       .nav { position: static !important; background-color: var(--bg) !important; border-bottom-color: var(--border) !important; }
       .nav-inner { flex-wrap: wrap !important; }
-      .nav-menu { position: static !important; flex-basis: 100% !important; max-height: none !important; overflow: visible !important; }
+      .nav-menu { position: static !important; flex-basis: 100% !important; max-height: none !important; overflow: visible !important; visibility: visible !important; }
       .hero-content { padding-top: 3rem !important; }
     }
   </style></noscript>
