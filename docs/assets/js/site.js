@@ -230,7 +230,10 @@ if (sections.length) {
 
 // Fade/slide sections and cards into place as they enter the viewport.
 // Reduced-motion users (and browsers without IntersectionObserver) just see
-// everything visible immediately, no animation.
+// everything visible immediately, no animation. The threshold is 0 rather than
+// a fraction of the element: at high zoom a tall block (a long job entry) can
+// be many viewports tall, so it could never be, say, 15% on screen at once
+// and would stay invisible.
 var revealTargets = document.querySelectorAll('.reveal');
 if (reduceMotion || !('IntersectionObserver' in window)) {
   revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
@@ -242,7 +245,7 @@ if (reduceMotion || !('IntersectionObserver' in window)) {
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
 
   revealTargets.forEach(function (el) { revealObserver.observe(el); });
 }

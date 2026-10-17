@@ -64,8 +64,11 @@
   }
 }
 
+// scroll-padding-top keeps anything scrolled into view (anchor targets, the
+// skip link target, and elements reached by tabbing) clear of the fixed nav.
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -146,7 +149,10 @@ img {
   color: var(--accent-contrast);
   padding: 0.6rem 1rem;
   border-radius: 0 0 0.4rem 0.4rem;
-  transition: top 0.2s ease;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: top 0.2s ease;
+  }
 
   &:focus {
     top: 0;
@@ -156,10 +162,6 @@ img {
 
 .not-found {
   padding: 8rem 1rem 4rem;
-}
-
-#featured, #work, #about, #education, #footer {
-  scroll-margin-top: 4.5rem;
 }
 
 // ------------------------------------------------------------------
@@ -315,8 +317,14 @@ li {
     text-decoration: none;
   }
 
+  // The underline gives the current section a cue beyond color, which alone
+  // is too close to the muted link color to tell apart. Declared after the
+  // :hover rule above so hovering the current link doesn't remove it.
   &[aria-current="location"] {
     color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 0.13rem;
+    text-underline-offset: 0.4rem;
   }
 }
 
@@ -346,12 +354,15 @@ li {
   cursor: pointer;
 }
 
+// Bars are drawn with a border rather than a background color: forced-colors
+// modes (Windows High Contrast) strip author backgrounds, which would leave
+// an empty button, but they keep borders and recolor them to match the text.
 .nav-toggle-bar {
   display: block;
   width: 1.3rem;
-  height: 0.14rem;
+  height: 0;
   margin-inline: auto;
-  background-color: var(--text);
+  border-top: 0.14rem solid var(--text);
   border-radius: 0.1rem;
 
   @media (prefers-reduced-motion: no-preference) {
@@ -400,6 +411,15 @@ li {
     max-height: 24rem;
     visibility: visible;
     transition: max-height 0.3s ease;
+  }
+
+  // No slide for reduced-motion users: the menu opens and closes instantly,
+  // and visibility flips with it so collapsed links still leave the tab order.
+  @media (prefers-reduced-motion: reduce) {
+    .nav-menu,
+    .nav-menu.is-open {
+      transition: none;
+    }
   }
 
   .nav-link, .nav-resume {
@@ -606,17 +626,42 @@ li {
   // card pops in instead of fading.
   transition: opacity 0.6s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 
+  // The border highlight is a color change, not motion, so reduced-motion
+  // users keep it as a cue for which card has focus; only the lift is gated.
+  &:hover, &:focus-within {
+    border-color: var(--accent);
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     &:hover, &:focus-within {
       transform: translateY(-0.3rem);
-      border-color: var(--accent);
       box-shadow: 0 1.6rem 3rem -1.6rem var(--shadow);
     }
   }
 }
 
+// The card's overflow: hidden would clip a focus ring drawn around this link
+// (it spans the card's full width), so the ring is drawn inside it instead,
+// inset clear of the card's rounded corners. It's two-tone (accent outline
+// between contrasting shadows) so it stays visible over any screenshot, and
+// an outline rather than only shadows so forced-colors modes still show it.
 .project-cover {
   display: block;
+  position: relative;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible::after {
+    content: "";
+    position: absolute;
+    inset: 0.5rem;
+    border-radius: 0.5rem;
+    outline: 0.2rem solid var(--accent);
+    box-shadow: 0 0 0 0.4rem var(--accent-contrast), inset 0 0 0 0.2rem var(--accent-contrast);
+    pointer-events: none;
+  }
 
   img {
     width: 100%;

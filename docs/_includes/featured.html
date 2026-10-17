@@ -6,9 +6,10 @@
     </div>
     <div class="project-grid">
       {% for project in site.data.featured %}
+      {% assign cover = project.images[0] %}
       <article class="project-card reveal">
-        <a class="project-cover" href="{{ project.images[0] }}" target="_blank" rel="noopener noreferrer">
-          <img src="{{ project.images[0] }}" alt="{{ project.title }} screenshot" width="800" height="600" loading="lazy">
+        <a class="project-cover" href="{{ cover.src }}" target="_blank" rel="noopener noreferrer">
+          <img src="{{ cover.src }}" alt="{{ cover.alt | default: project.title | escape }}" width="800" height="600" loading="lazy">
         </a>
         <div class="project-body">
           <h3>{{ project.title }}</h3>
@@ -21,10 +22,10 @@
           </ul>
           {% endif %}
           {% if project.images.size > 1 %}
-          <div class="project-gallery" aria-label="More {{ project.title }} screenshots">
+          <div class="project-gallery" role="group" aria-label="More {{ project.title }} screenshots">
             {% for image in project.images offset: 1 %}
-            <a class="project-thumb" href="{{ image }}" target="_blank" rel="noopener noreferrer">
-              <img src="{{ image }}" alt="{{ project.title }} screenshot {{ forloop.index | plus: 1 }}" width="240" height="180" loading="lazy">
+            <a class="project-thumb" href="{{ image.src }}" target="_blank" rel="noopener noreferrer">
+              <img src="{{ image.src }}" alt="{{ image.alt | default: project.title | escape }}" width="240" height="180" loading="lazy">
             </a>
             {% endfor %}
           </div>

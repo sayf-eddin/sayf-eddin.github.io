@@ -1,6 +1,7 @@
 - title: "MHICO"
   images:
-    - "/assets/images/mhico.webp"
+    - src: "/assets/images/mhico.webp"
+      alt: "mhico.ai homepage"
   tags:
     - "Python"
     - "AWS"
@@ -21,10 +22,14 @@
 
 - title: "Dow Jones Marketing"
   images:
-    - "/assets/images/wsj_pro.webp"
-    - "/assets/images/journal_house.webp"
-    - "/assets/images/wsj_store.webp"
-    - "/assets/images/wsj_email.webp"
+    - src: "/assets/images/wsj_pro.webp"
+      alt: "WSJ Pro Private Equity page"
+    - src: "/assets/images/journal_house.webp"
+      alt: "Journal House homepage"
+    - src: "/assets/images/wsj_store.webp"
+      alt: "WSJ subscription store page"
+    - src: "/assets/images/wsj_email.webp"
+      alt: "WSJ email for educators"
   tags:
     - "JavaScript"
     - "WordPress"
