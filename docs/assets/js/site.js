@@ -55,18 +55,38 @@ if (galleryLinks.length && typeof HTMLDialogElement === 'function') {
   var lightbox = document.createElement('dialog');
   lightbox.className = 'lightbox';
   lightbox.setAttribute('aria-label', 'Screenshot viewer');
-  lightbox.innerHTML =
-    '<button class="lightbox-btn lightbox-close" type="button" aria-label="Close">&times;</button>' +
-    '<button class="lightbox-btn lightbox-prev" type="button" aria-label="Previous screenshot">&lsaquo;</button>' +
-    '<img class="lightbox-img" alt="">' +
-    '<button class="lightbox-btn lightbox-next" type="button" aria-label="Next screenshot">&rsaquo;</button>' +
-    '<p class="lightbox-count" aria-live="polite"></p>';
+  // Built with DOM calls rather than innerHTML so the page works under a
+  // Trusted Types CSP (require-trusted-types-for 'script'). The icons are SVG
+  // paths rather than text glyphs (×, ‹, ›), which sit off-center in a round
+  // button because of font metrics.
+  var svgNS = 'http://www.w3.org/2000/svg';
+  var makeLightboxButton = function (modifier, label, pathData) {
+    var btn = document.createElement('button');
+    btn.className = 'lightbox-btn lightbox-' + modifier;
+    btn.type = 'button';
+    btn.setAttribute('aria-label', label);
+    var icon = document.createElementNS(svgNS, 'svg');
+    icon.setAttribute('viewBox', '0 0 24 24');
+    icon.setAttribute('aria-hidden', 'true');
+    icon.setAttribute('focusable', 'false');
+    var path = document.createElementNS(svgNS, 'path');
+    path.setAttribute('d', pathData);
+    icon.appendChild(path);
+    btn.appendChild(icon);
+    return btn;
+  };
+  var lightboxClose = makeLightboxButton('close', 'Close', 'M6 6l12 12M18 6L6 18');
+  var lightboxPrev = makeLightboxButton('prev', 'Previous screenshot', 'M15 5l-7 7 7 7');
+  var lightboxImg = document.createElement('img');
+  lightboxImg.className = 'lightbox-img';
+  lightboxImg.alt = '';
+  var lightboxNext = makeLightboxButton('next', 'Next screenshot', 'M9 5l7 7-7 7');
+  var lightboxCount = document.createElement('p');
+  lightboxCount.className = 'lightbox-count';
+  lightboxCount.setAttribute('aria-live', 'polite');
+  lightbox.append(lightboxClose, lightboxPrev, lightboxImg, lightboxNext, lightboxCount);
   document.body.appendChild(lightbox);
 
-  var lightboxImg = lightbox.querySelector('.lightbox-img');
-  var lightboxPrev = lightbox.querySelector('.lightbox-prev');
-  var lightboxNext = lightbox.querySelector('.lightbox-next');
-  var lightboxCount = lightbox.querySelector('.lightbox-count');
   var lightboxImages = [];
   var lightboxIndex = 0;
   var lightboxOpener = null;
@@ -103,7 +123,7 @@ if (galleryLinks.length && typeof HTMLDialogElement === 'function') {
 
   lightboxPrev.addEventListener('click', function () { showLightboxImage(lightboxIndex - 1); });
   lightboxNext.addEventListener('click', function () { showLightboxImage(lightboxIndex + 1); });
-  lightbox.querySelector('.lightbox-close').addEventListener('click', function () { lightbox.close(); });
+  lightboxClose.addEventListener('click', function () { lightbox.close(); });
 
   // The dialog fills the viewport, so a click that lands on the dialog itself
   // (rather than the image or a button) is a click on the dimmed backdrop.
