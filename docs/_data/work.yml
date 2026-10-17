@@ -3,23 +3,23 @@
   years: "Mar 2026 – Jul 2026"
   location: "Remote"
   description: >
-    * Served as sole technical co‑founder of mhico.ai, a health insurance guidance website, creating the
-    core architecture, technology, and product decisions that shaped the company from initial&nbsp;concept
+    * Served as sole technical <span class="nowrap">co-founder</span> of mhico.ai, a health insurance guidance website, creating the
+    core architecture, technology, and product decisions that shaped the company from initial concept
 
     * Maintained the live platform in Django on AWS using Claude Code to accelerate development of features
-    which helped users understand their health insurance and avoid overpaying due to&nbsp;errors
+    which helped users understand their health insurance and avoid overpaying due to errors
 
     * Integrated OAuth connections to 30+ payer APIs including Medicare, UnitedHealthcare, Aetna, and Cigna
-    for users to get personalized AI chat assistance, manage claims, and find open enrollment&nbsp;recommendations
+    for users to get personalized AI chat assistance, manage claims, and find open enrollment recommendations
 
-    * Utilized Claude via AWS Bedrock for chat and document analysis, applying strict data&nbsp;minimization
+    * Utilized Claude via AWS Bedrock for chat and document analysis, applying strict data minimization
 
-    * Deployed on HIPAA&#8209;compliant AWS infrastructure with monitoring/logging, WAF rules, edge&#8209;gated
-    reverse proxy, and a security SDLC with 99.9% uptime across weekly zero&#8209;downtime&nbsp;releases
+    * Deployed on <span class="nowrap">HIPAA-compliant</span> AWS infrastructure with monitoring/logging, WAF rules, <span class="nowrap">edge-gated</span>
+    reverse proxy, and a security SDLC with 99.9% uptime across weekly <span class="nowrap">zero-downtime</span> releases
 
-    * Built privacy-by-design safeguards with a transparent privacy policy, end-to-end
+    * Built privacy-by-design safeguards with a transparent privacy policy, <span class="nowrap">end-to-end</span>
     encryption, mandatory user MFA, data control for users, consent gates for sensitive data, and automated
-    data retention life&nbsp;cycles
+    data retention life cycles
 
 - company: "Various Clients"
   role: "Freelance Developer"
@@ -27,27 +27,27 @@
   location: "Remote"
   description: >
     * Engineered web applications and APIs using Python, Node.js, React, Spring, and OpenAI for clients
-    across data reporting and integration&nbsp;projects
+    across data reporting and integration projects
 
     * Collaborated on Astan, an AI cybersecurity system, by managing the codebase and creating product demos
-    for pitch&nbsp;meetings
+    for pitch meetings
 
-    * Preprocessed and analyzed data in Python using scikit&#8209;learn and pandas for an award&#8209;winning
-    data storytelling avatar creation&nbsp;experience
+    * Preprocessed and analyzed data in Python using <span class="nowrap">scikit-learn</span> and pandas for an <span class="nowrap">award-winning</span>
+    data storytelling avatar creation experience
 
-    * Designed EDI file&#8209;conversion pipelines (CSV/XML to JSON) integrated via Liaison Delta for
-    ~20&nbsp;clients
+    * Designed EDI <span class="nowrap">file-conversion</span> pipelines (CSV/XML to JSON) integrated via Liaison Delta for
+    ~20 clients
 
 - company: "Hogarth Worldwide"
   role: "Front-End Developer"
   years: "Sep 2021 – Dec 2022"
   location: "New York, NY"
   description: >
-    * Composed time&#8209;sensitive marketing assets for 300+ campaigns for The Wall Street Journal,
-    MarketWatch, and Barron’s, supporting engagement with ~4,000,000&nbsp;readers
+    * Composed <span class="nowrap">time-sensitive</span> marketing assets for 300+ campaigns for The Wall Street Journal,
+    MarketWatch, and Barron’s, supporting engagement with ~4,000,000 readers
 
     * Developed PHP/JavaScript modules for [wsjpro.com](https://www.wsjpro.com){:target="_blank" rel="noopener noreferrer"} on WordPress for premium users and composed shop pages with
-    JavaScript and Webpack to increase subscriptions and bundles&nbsp;sales
+    JavaScript and Webpack to increase subscription and bundle sales
 
 - company: "Syracuse University Division of Marketing and Communications"
   role: "Full-Stack Developer Intern"
@@ -55,4 +55,4 @@
   location: "Syracuse, NY"
   description: >
     * Assisted with upgrading virtual systems through scripts and web applications which affected ~15,000
-    WordPress sites for university branding, faculty, and&nbsp;students
+    WordPress sites for university branding, faculty, and students

@@ -27,7 +27,7 @@
     <div class="hero-text">
       <p class="hero-eyebrow">Product Engineer</p>
       <h1 class="hero-title">Sayf Eddin Ahmed</h1>
-      <p class="hero-tagline">{{ site.description }}</p>
+      <p class="hero-tagline">{{ site.description | replace: "end-to-end", '<span class="nowrap">end-to-end</span>' }}</p>
       <div class="hero-actions">
         <a class="hero-cta hero-cta-primary" href="#featured">View my work</a>
         {% if resume %}

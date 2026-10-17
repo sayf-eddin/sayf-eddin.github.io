@@ -64,11 +64,15 @@
   }
 }
 
+// One content width shared by the nav, hero, and sections so their left
+// edges line up at every screen size.
+$content-max-width: 52rem;
+
 // scroll-padding-top keeps anything scrolled into view (anchor targets, the
 // skip link target, and elements reached by tabbing) clear of the fixed nav.
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 4.5rem;
+  scroll-padding-top: 5.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -77,9 +81,16 @@ html {
   }
 }
 
+// margin and line-height were reset by Bootstrap before it was removed; the
+// browser defaults (8px margin, ~1.2 line-height) otherwise come back.
+// overflow-wrap is a safety net so a long unbreakable string (a URL, a
+// hyphenated phrase) wraps instead of widening the page on narrow phones.
 body {
+  margin: 0;
   background-color: var(--bg);
   font-size: 1.2rem;
+  line-height: 1.55;
+  overflow-wrap: break-word;
 }
 
 // The width/height HTML attributes on <img> set an intrinsic ratio so the
@@ -125,19 +136,18 @@ img {
   text-align: center;
 }
 
+// Keeps a hyphenated phrase on one line. Preferred over U+2011 non-breaking
+// hyphens, which Inter has no glyph for, so they render in a fallback font.
+.nowrap {
+  white-space: nowrap;
+}
+
 .container {
   width: 100%;
-  max-width: 52rem;
+  max-width: $content-max-width;
   margin-inline: auto;
   padding-inline: 1.5rem;
   box-sizing: border-box;
-
-  @media (max-width: 1000px) {
-    max-width: 48rem;
-  }
-  @media (max-width: 850px) {
-    max-width: 100%;
-  }
 }
 
 .skip-link {
@@ -174,7 +184,6 @@ img {
 a {
   color: var(--text);
   text-decoration: none;
-  font-size: 1.2rem;
   font-weight: 600;
   transition: color 0.4s, background-color 0.4s;
 
@@ -191,8 +200,14 @@ p a, li a {
   text-decoration-color: var(--accent);
 }
 
+// Top margins are zeroed (as Bootstrap's reboot did) so spacing is set by
+// whatever sits above an element, e.g. a kicker's margin-bottom, rather than
+// collapsing with the browser's large default heading margins.
 h1, h2, h3, h4, h5 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
   font-weight: 700;
+  line-height: 1.2;
 }
 
 h1 {
@@ -224,8 +239,15 @@ h5 {
 
 p {
   font-size: 1.2rem;
+  margin-top: 0;
   margin-bottom: 0.5rem;
   color: var(--text-muted);
+}
+
+// Avoids a lone word on the last line, replacing hand-placed &nbsp;s that
+// couldn't adapt to the screen width.
+p, li {
+  text-wrap: pretty;
 }
 
 ul {
@@ -282,7 +304,7 @@ li {
 }
 
 .nav-inner {
-  max-width: 72rem;
+  max-width: $content-max-width;
   margin-inline: auto;
   padding-inline: 1.5rem;
   display: flex;
@@ -411,10 +433,20 @@ li {
     transition: max-height 0.3s ease, visibility 0s linear 0.3s;
   }
 
+  // Capped at the viewport below the nav bar (rather than a fixed height that
+  // large text sizes could outgrow) and scrollable if the links still don't fit.
   .nav-menu.is-open {
-    max-height: 24rem;
+    max-height: calc(100vh - 5rem);
+    max-height: calc(100dvh - 5rem);
+    overflow-y: auto;
     visibility: visible;
     transition: max-height 0.3s ease;
+  }
+
+  // Opened before scrolling, the bar would stay transparent above a solid panel.
+  .nav:has(.nav-menu.is-open) {
+    background-color: var(--bg);
+    border-bottom-color: var(--border);
   }
 
   // No slide for reduced-motion users: the menu opens and closes instantly,
@@ -451,7 +483,7 @@ li {
 // padding-top lives here (not on .hero) because the nav is a child of .hero:
 // nav is fixed and escapes normal flow, so this is what actually clears it.
 .hero-content {
-  max-width: 72rem;
+  max-width: $content-max-width;
   margin-inline: auto;
   padding-inline: 1.5rem;
   padding-top: 8rem;
@@ -890,9 +922,10 @@ li {
   }
 }
 
+// top centers the 0.7rem dot on the h3's first line (1.5rem x 1.2 line-height).
 .timeline-marker {
   position: absolute;
-  top: 0.35rem;
+  top: 0.55rem;
   left: -2rem;
   width: 0.7rem;
   height: 0.7rem;
@@ -913,7 +946,10 @@ li {
   }
 }
 
+// margin: 0 — a margin here pushes the title down in the baseline-aligned
+// row, misaligning it with the timeline marker.
 .timeline-years {
+  margin: 0;
   color: var(--text-muted);
   font-weight: 600;
   white-space: nowrap;
@@ -922,6 +958,7 @@ li {
 .timeline-company {
   color: var(--accent);
   font-weight: 600;
+  margin-top: 0.2rem;
   margin-bottom: 0.6rem;
 }
 
@@ -976,9 +1013,7 @@ li {
 .footer {
   @include section($bg: var(--bg-soft));
   text-align: center;
-  padding-top: 4rem;
   padding-bottom: 1rem;
-  border-top: 0.1rem solid var(--border);
 }
 
 .footer-links {
