@@ -88,6 +88,7 @@ html {
 body {
   margin: 0;
   background-color: var(--bg);
+  color: var(--text);
   font-size: 1.2rem;
   line-height: 1.55;
   overflow-wrap: break-word;
@@ -107,8 +108,14 @@ img {
   box-sizing: border-box;
 }
 
+// Color is set on body, not here, so inline elements (spans, SVG icons)
+// inherit their parent's color instead of being reset to --text.
 * {
   font-family: 'Inter', sans-serif;
+}
+
+// Bold runs inside muted body copy stand out at full text color.
+b, strong {
   color: var(--text);
 }
 
@@ -962,9 +969,11 @@ li {
   margin-bottom: 0.6rem;
 }
 
+// nowrap keeps "· New York, NY" together instead of splitting the city.
 .timeline-location {
   color: var(--text-muted);
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .timeline-content .desc {
