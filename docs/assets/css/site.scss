@@ -149,13 +149,17 @@ img {
   color: var(--accent-contrast);
   padding: 0.6rem 1rem;
   border-radius: 0 0 0.4rem 0.4rem;
+  // Transparent until focused: overscroll bounce (iOS/macOS Safari) reveals
+  // the area above the page, where the link is parked.
+  opacity: 0;
 
   @media (prefers-reduced-motion: no-preference) {
-    transition: top 0.2s ease;
+    transition: top 0.2s ease, opacity 0.2s ease;
   }
 
   &:focus {
     top: 0;
+    opacity: 1;
     color: var(--accent-contrast);
   }
 }
